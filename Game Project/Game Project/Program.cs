@@ -8,26 +8,28 @@ namespace Game_Project
     {
         // Evan's Area
 
-        static void Main(string[] args)
+                static void Main(string[] args)
         {
-            Introduction();
+            EvanRoom();
             Console.ReadLine();
-        }
-        public static void Introduction()
-        {
-            Console.WriteLine("You wake up is a strange room...");
-            Thread.Sleep(500);
-            Console.WriteLine("Who am i?");
-            Thread.Sleep(500);
-            Console.WriteLine("there are 3 doors in front of you");
-            Thread.Sleep(500);
-            Console.WriteLine("which one do you want to get into?");
-            Thread.Sleep(500);
-            Console.ReadLine();
-            Menu1();
         }
 
-        public static void Menu1()
+                public static void EvanRoom()
+        {
+            Console.WriteLine("This room is very dark and cold.");
+            Thread.Sleep(500);
+            Console.WriteLine("There is a computer scream turns on. It seems that there are some questions need to be answer...");
+            Thread.Sleep(500);
+            Console.WriteLine("There are 4 doors(methods) in front of you");
+            Thread.Sleep(500);
+            Console.WriteLine("Which one do you want to get into?");
+            Thread.Sleep(500);           
+            Menu1();
+
+            Console.Beep(); Console.Beep((int)523.2, 300); Console.Beep((int)523.2, 300); Console.Beep((int)523.2, 300);
+        }
+
+            public static void Menu1()
         {
 
             int selection;
@@ -58,34 +60,49 @@ namespace Game_Project
                     case 3:
                         method3();
                         break;
-
-
                     default:
                         break;
                 }
             } while (selection != 4);
         }
-
-        //method1
+     
              public static void method1()
             {
                 Console.WriteLine("Press any key to continue");
                 Console.ReadLine();
-             }
-        
-                public static void method2()
-                {
-                    Console.Clear();
                 }
         
-                static void method3()
-                {
-                    Console.Clear();
-                    Console.WriteLine("empty for now");
+            public static void method2()
+            {
+   
+            
+            
+            Console.Clear();
+            Console.Beep((int)523.2, 300);
+            Console.Beep();          
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+            Console.Beep();
+            Console.WriteLine("Boommmmmmmmmmmmm!!!!!!!!");
+            Thread.Sleep(500);
+            Console.WriteLine("You dead!!");
 
-                    Console.WriteLine("Press any key to continue");
-                    Console.ReadLine();
-                }
+
+        }
+        
+            static void method3()
+            {
+                Console.Clear();
+                Console.WriteLine("empty for now");
+
+                Console.WriteLine("Press any key to continue");
+                Console.ReadLine();
+            }
 
 
 
