@@ -1,0 +1,23 @@
+pwd
+cd group
+git pull
+git status
+
+git add Group/Goup/Program.cs
+git status
+git commit -m"add method_swap number"
+git status
+git push
+
+pwd
+ls
+cd Studio-1-Game
+git add "Game Project"
+git commit -m "added infro"
+git push
+
+
+
+
+
+
