@@ -115,7 +115,30 @@ namespace Game_Project
 
             //Alex's Area
 
+        public static void MainRoom()
+        {
+            int choice;
 
+            Console.WriteLine("You find yourself in a big room.");
+            Console.WriteLine("In the room there is a door with a lock on it.");
+            Console.WriteLine("On the floor there is a key.");
+            Console.WriteLine("What do you wish to do?");
+            Console.WriteLine("1.Walk around the room.");
+            Console.WriteLine("2.Curel up and cry");
+            Console.WriteLine("3.Pick up the key");
+
+            choice = Convert.ToInt32(Console.ReadLine());
+            switch (choice)
+            {
+                case 1:
+                    Console.WriteLine("You walk around the room for what seems like ages. (Nothing happens)");
+                    break;
+                default:
+                    Console.WriteLine("Invalid input");
+                    break;
+            }
+
+        }
 
 
 
