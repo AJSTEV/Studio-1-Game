@@ -272,8 +272,39 @@ namespace Game_Project
         // commit test
         public static void OliversRoom1()
         {
-            Console.WriteLine("Under Construction");
+            private static int choice;
+
+        public static void MenuTitle()
+        {
+            Console.Write("The menu options are:\n 1\tGo to previous room\n 2\tPick up blue key\n 3 \tTask 3\n 4 \tTask 4\n 0 \tExit menu system");
         }
+        public static void GetChoice()
+        {
+            Console.WriteLine("\n\nPlease enter your choice ");
+            choice = Convert.ToInt32(Console.ReadLine());
+        }
+        public static void MenuCases()
+        {
+            MenuTitle();
+            GetChoice();
+            switch (choice)
+            {
+                case 1:
+                    //go to previous room
+                    break;
+                case 2:
+                    //pick up blue key
+                    break;
+                case 0:
+                    break;
+            }
+        }
+        public static void Main(string[] args)
+        {
+            MenuCases();
+            Console.ReadLine();
+        }
+    }
 
 
 
