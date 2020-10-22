@@ -32,8 +32,7 @@ namespace Game_Project
             Console.WriteLine("*****************************************************************************************************************\n");
             Console.WriteLine(" Question: If your mother and your girlfriend(boyfriend) fall into a pond and nobody can siwm including yourself  \n");
             Console.WriteLine("*****************************************************************************************************************");
-            Thread.Sleep(500);
-            Console.ReadLine();
+            Thread.Sleep(500);        
             Console.WriteLine("How would you like to do?");
             Console.ReadLine();
             Thread.Sleep(500);
@@ -179,6 +178,7 @@ namespace Game_Project
             Thread.Sleep(1000);
             Console.WriteLine("You dead!!");
             Console.ReadLine();
+            Console.Clear();
             EvanMenu1();
         }
         
@@ -233,8 +233,8 @@ namespace Game_Project
                     case 3:
                         break;
                 }
-            
-            } while (choice != 0)
+
+            } while (choice != 0);
         Console.ReadLine();
         }
      
