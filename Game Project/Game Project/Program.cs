@@ -19,32 +19,29 @@ namespace Game_Project
 
 
         // Evan's Area
-        public void stuff(Item[] items)
-        {
-            
-            string goldKey;
-            items[0].keys = "goldKey";
-            
-        }
-
-
 
 
         static void EvansRoom1()
         {
-            EvanRoom();
+            EvanRoomA();
+
             Console.ReadLine();
         }
 
-                public static void EvanRoom()
+                public static void EvanRoomA()
         {
             Console.WriteLine("This room is very dark and cold.");
             Thread.Sleep(500);
             Console.WriteLine("There is a computer scream turns on. It seems that there are some questions need to be answer...");
             Thread.Sleep(500);
-            Console.WriteLine("Question:If your mother and your girlfriend(boyfriend) fall into a pond and nobody can siwm including yourself");
+            Console.ReadLine();
+            Console.WriteLine("*****************************************************************************************************************\n");
+            Console.WriteLine(" Question: If your mother and your girlfriend(boyfriend) fall into a pond and nobody can siwm including yourself  \n");
+            Console.WriteLine("*****************************************************************************************************************");
             Thread.Sleep(500);
+            Console.ReadLine();
             Console.WriteLine("How would you like to do?");
+            Console.ReadLine();
             Thread.Sleep(500);           
             Menu1();
         
@@ -57,7 +54,7 @@ namespace Game_Project
             string[] title = { 
                 "Pretend not to see. Go home immediately and invite your friends to make a super big party",
                 "Sing a song to make them relax and light a cigarette",
-                "Jumping into the pond Join them", 
+                "Jumping into the pond and joining them", 
                 "It's not my business." };
             do
             {
@@ -74,24 +71,25 @@ namespace Game_Project
                 switch (selection)
                 {
                     case 1:
-                        answer1();
+                        zombies();
                         break;
 
                     case 2:
-                        answer2();
+                        bomb();
                         break;
 
                     case 3:
-                        answer3();
+                        redKey();
                         break;
                 
                     default:
+                        Console.WriteLine("Oh It is your business,go back");
                         break;
                 }
             } while (selection != 4);
         }
      
-                     public static void answer1()
+                     public static void zombies()
                     {
 
                     Console.Clear();
@@ -131,17 +129,25 @@ namespace Game_Project
                     if (zombiesDistanceToExit - youDistanceToExit <= 0)
                     {
                         Console.WriteLine("The Zombies ate you....");
+                        Main();
+
                         Console.ReadLine();
-                    }
+                        
+            }
                     else
                     {
                         Console.WriteLine("You survived....");
+                        
+                         Console.ReadLine();
+                         Console.WriteLine("It seems that they have gone...");
+                        Console.ReadLine();
+                        Console.WriteLine("You have to go back.");
                         Console.ReadLine();
                     }
                     Console.ReadLine();
         }
         
-            public static void answer2()
+            public static void bomb()
             {
             
             Console.Clear();
@@ -164,20 +170,26 @@ namespace Game_Project
             Thread.Sleep(1000);
             Console.WriteLine("You dead!!");
             Console.ReadLine();
+            Main();
+
+
         }
         
-            static void answer3()
+            static void redKey()
             {
                 Console.Clear();
-                Console.WriteLine("On the floor there is a gold key.");
+                Console.WriteLine("On the floor there is a red key.");
                 Console.WriteLine("What do you wish to do?");
                 Console.WriteLine("Pick up the key?(yes/no)");
                 string temp = Console.ReadLine();
             if (temp == "yes")
             {
                 Console.WriteLine("You walk over to the key and pick it up.");
-                Console.WriteLine("You got a gold key");
-                
+                Console.WriteLine("You got a red key");
+                redkey++;
+                Main();
+
+
             }
             else
             {
