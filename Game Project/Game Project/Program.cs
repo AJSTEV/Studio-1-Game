@@ -5,12 +5,6 @@ using System.Threading;
 namespace Game_Project
 
 {
-    public struct Item  //add your items
-    {
-        public string keys;
-
-    }
-
     class Program
     {
         //Inventory
@@ -28,7 +22,7 @@ namespace Game_Project
             Console.ReadLine();
         }
 
-                public static void EvanRoomA()
+        public static void EvanRoomA()
         {
             Console.WriteLine("This room is very dark and cold.");
             Thread.Sleep(500);
@@ -42,12 +36,12 @@ namespace Game_Project
             Console.ReadLine();
             Console.WriteLine("How would you like to do?");
             Console.ReadLine();
-            Thread.Sleep(500);           
-            Menu1();
+            Thread.Sleep(500);
+            EvanMenu1();
 
         }
 
-        public static void Menu1()
+        public static void EvanMenu1()
         {
 
             int selection;
@@ -88,13 +82,9 @@ namespace Game_Project
                 }
             } while (selection != 4);
         }
-     
-                     public static void zombies()
-                    {
 
-        public static void answer1()
+        public static void zombies()
         {
-
             Console.Clear();
             Console.WriteLine("What's that noises");
 
@@ -129,42 +119,28 @@ namespace Game_Project
 
             }
 
-                    if (zombiesDistanceToExit - youDistanceToExit <= 0)
-                    {
-                        Console.WriteLine("The Zombies ate you....");
-                        Main();
-
-                        Console.ReadLine();
-                        
-            }
-                    else
-                    {
-                        Console.WriteLine("You survived....");
-                        
-                         Console.ReadLine();
-                         Console.WriteLine("It seems that they have gone...");
-                        Console.ReadLine();
-                        Console.WriteLine("You have to go back.");
-                        Console.ReadLine();
-                    }
-                    Console.ReadLine();
-        }
-        
-            public static void bomb()
             if (zombiesDistanceToExit - youDistanceToExit <= 0)
             {
                 Console.WriteLine("The Zombies ate you....");
+                EvanMenu1();
+
                 Console.ReadLine();
+
             }
             else
             {
                 Console.WriteLine("You survived....");
+
+                Console.ReadLine();
+                Console.WriteLine("It seems that they have gone...");
+                Console.ReadLine();
+                Console.WriteLine("You have to go back.");
                 Console.ReadLine();
             }
             Console.ReadLine();
         }
-
-        public static void answer2()
+                              
+        public static void bomb()
         {
 
             Console.Clear();
@@ -184,12 +160,26 @@ namespace Game_Project
             Console.Clear();
             Thread.Sleep(500);
             Console.WriteLine("BOMB!!!!");
+            Console.WriteLine(@"
+                              -^^---....,,--       
+                         _--                  --_  
+                        <                        >)
+                        |                         | 
+                         \._                   _./  
+                            ```--. . , ; .--'''       
+                                  | |   |             
+                               .-=||  | |=-.   
+                               `-=#$%&%$#=-'   
+                                  | ;  :|     
+                         _____.,-#%&$@%#&#~,._____
+
+
+
+                                ");
             Thread.Sleep(1000);
             Console.WriteLine("You dead!!");
             Console.ReadLine();
-            Main();
-
-
+            EvanMenu1();
         }
         
             static void redKey()
@@ -199,22 +189,22 @@ namespace Game_Project
                 Console.WriteLine("What do you wish to do?");
                 Console.WriteLine("Pick up the key?(yes/no)");
                 string temp = Console.ReadLine();
-            if (temp == "yes")
-            {
-                Console.WriteLine("You walk over to the key and pick it up.");
-                Console.WriteLine("You got a red key");
-                redkey++;
-                Main();
+                if (temp == "yes")
+                {
+                    Console.WriteLine("You walk over to the key and pick it up.");
+                    Console.WriteLine("You got a red key");
+                    redkey++;
+                    Main();
 
 
+                }
+                else
+                {
+                    Console.WriteLine("Good Luck");
+
+                }
+                Console.ReadLine();
             }
-            else
-            {
-                Console.WriteLine("Good Luck");
-
-            }
-            Console.ReadLine();
-        }
 
 
 
