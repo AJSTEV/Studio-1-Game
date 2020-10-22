@@ -19,18 +19,6 @@ namespace Game_Project
 
 
         // Evan's Area
-<<<<<<< HEAD
-=======
-        public void stuff(Item[] items)
-        {
-
-            string goldKey;
-            items[0].keys = "goldKey";
-
-        }
-
-
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
 
 
         static void EvansRoom1()
@@ -40,11 +28,7 @@ namespace Game_Project
             Console.ReadLine();
         }
 
-<<<<<<< HEAD
                 public static void EvanRoomA()
-=======
-        public static void EvanRoom()
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
         {
             Console.WriteLine("This room is very dark and cold.");
             Thread.Sleep(500);
@@ -57,12 +41,8 @@ namespace Game_Project
             Thread.Sleep(500);
             Console.ReadLine();
             Console.WriteLine("How would you like to do?");
-<<<<<<< HEAD
             Console.ReadLine();
             Thread.Sleep(500);           
-=======
-            Thread.Sleep(500);
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
             Menu1();
 
         }
@@ -74,11 +54,7 @@ namespace Game_Project
             string[] title = {
                 "Pretend not to see. Go home immediately and invite your friends to make a super big party",
                 "Sing a song to make them relax and light a cigarette",
-<<<<<<< HEAD
                 "Jumping into the pond and joining them", 
-=======
-                "Jumping into the pond Join them",
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
                 "It's not my business." };
             do
             {
@@ -112,12 +88,9 @@ namespace Game_Project
                 }
             } while (selection != 4);
         }
-<<<<<<< HEAD
      
                      public static void zombies()
                     {
-=======
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
 
         public static void answer1()
         {
@@ -156,7 +129,6 @@ namespace Game_Project
 
             }
 
-<<<<<<< HEAD
                     if (zombiesDistanceToExit - youDistanceToExit <= 0)
                     {
                         Console.WriteLine("The Zombies ate you....");
@@ -179,14 +151,12 @@ namespace Game_Project
         }
         
             public static void bomb()
-=======
             if (zombiesDistanceToExit - youDistanceToExit <= 0)
             {
                 Console.WriteLine("The Zombies ate you....");
                 Console.ReadLine();
             }
             else
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
             {
                 Console.WriteLine("You survived....");
                 Console.ReadLine();
@@ -221,7 +191,6 @@ namespace Game_Project
 
 
         }
-<<<<<<< HEAD
         
             static void redKey()
             {
@@ -237,20 +206,6 @@ namespace Game_Project
                 redkey++;
                 Main();
 
-=======
-
-        static void answer3()
-        {
-            Console.Clear();
-            Console.WriteLine("On the floor there is a gold key.");
-            Console.WriteLine("What do you wish to do?");
-            Console.WriteLine("Pick up the key?(yes/no)");
-            string temp = Console.ReadLine();
-            if (temp == "yes")
-            {
-                Console.WriteLine("You walk over to the key and pick it up.");
-                Console.WriteLine("You got a gold key");
->>>>>>> 00a7500dd5eaf78298006ef99430f98ad16aa3a8
 
             }
             else
@@ -385,7 +340,7 @@ namespace Game_Project
 
 
                 Console.ReadLine();
-            }
+        }
 
 
 
