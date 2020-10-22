@@ -217,39 +217,28 @@ namespace Game_Project
         // commit test
         public static void OliversRoom1()
         {
-            private static int choice;
-
-        public static void MenuTitle()
-        {
-            Console.Write("The menu options are:\n 1\tGo to previous room\n 2\tPick up blue key\n 3 \tTask 3\n 4 \tTask 4\n 0 \tExit menu system");
-        }
-        public static void GetChoice()
-        {
-            Console.WriteLine("\n\nPlease enter your choice ");
+            int choice;
+            Console.WriteLine("1. Go to previous room \n 2. Pick up blue key");
             choice = Convert.ToInt32(Console.ReadLine());
-        }
-        public static void MenuCases()
-        {
-            MenuTitle();
-            GetChoice();
-            switch (choice)
+            do
             {
-                case 1:
-                    //go to previous room
-                    break;
-                case 2:
-                    //pick up blue key
-                    break;
-                case 0:
-                    break;
-            }
+                switch (choice)
+                {
+                    case 1:
+                        //go to previous room
+                        break;
+                    case 2:
+                        //pick up blue key
+                        break;
+                    case 3:
+                        break;
+                }
+            
+            } while (choice != 0)
+        Console.ReadLine();
         }
-        public static void Main(string[] args)
-        {
-            MenuCases();
-            Console.ReadLine();
-        }
-    }
+     
+    
 
 
 
