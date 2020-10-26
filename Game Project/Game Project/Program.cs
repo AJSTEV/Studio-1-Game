@@ -37,8 +37,13 @@ namespace Game_Project
             Console.ReadLine();
 
         }
-        // Evan's Area
-        //public static int KeyFragment = 0, bombA = 0;
+        // Evan's Area 
+        //In my room, users have to collect 2 pieces of fragments which come from room1(zombies) and room2(bomb) to make red key.
+        //Room 1 zombies is needed to use a item which is bomb can be colleted by room 2 bomb.
+        //room 3 redkey is a feature to make a completed redkey as long as user collect at least 2 fragments.
+        //features: 001:if users pass room2 but didn't use bomb in room .There will be a notice
+        //features: 002:if users havn't passed room2 but use bomb in room .There will be a jok notice user
+        //features: 003: beep sound can be heard
         public static void EvanInventory()
         {
             if (KeyFragment >= 1)
@@ -49,10 +54,7 @@ namespace Game_Project
             {
                 Console.WriteLine($"Bomb x{bombA}");
             }
-            if (KeyFragment == 2)
-            {
-                redKey();
-            }
+
 
         }
         static void EvansRoom1()
@@ -61,9 +63,10 @@ namespace Game_Project
             EvanRoomA();
 
             Console.ReadLine();
+            Console.WriteLine("press enter to continue.");
         }
 
-        public static void EvanRoomA()
+        public static void EvanRoomA()//corn question
         {
             Console.WriteLine("This room is very dark and cold.\n");
             Thread.Sleep(500);
@@ -79,16 +82,16 @@ namespace Game_Project
 
         }
 
-        public static void EvanMenu1()
+        public static void EvanMenu1() //answers that player need to manke decision
         {
 
             int selection;
             string[] title = {
-                "Pretend not to see. Go home immediately and invite your friends to make a super big party",
-                "Sing a song to make them relax and light a cigarette",
-                "Jumping into the pond and joining them", 
-                "It's not my business.",
-                "Check Inevntory"
+                "Pretend not to see. Go home immediately and invite your friends to make a super big party",//no.1 decision
+                "Sing a song to make them relax and light a cigarette",//no.2 decision
+                "Jumping into the pond and joining them", //no.3 decision
+                "It's not my business.",//no.4 decision
+                "Check Inevntory"//no.5 decision
                                         };
             do
             {
@@ -102,28 +105,32 @@ namespace Game_Project
                     Thread.Sleep(300);
                 }
                 string temp = Console.ReadLine();
+
                 selection = Convert.ToInt32(temp);
 
                 switch (selection)
                 {
                     case 1:
-                        zombies();
+                        zombies();//zombies situation
                         break;
 
                     case 2:
-                        bomb();
+                        bomb();//bomb situation
                         break;
 
                     case 3:
-                        redKey();
+                        redKey(); // make red key by fragments 
                         break;
                     case 5:
-                        //EvanInventory();
+                        //EvanInventory();  //check out inventory
                         Inventory();
                         break;
 
                     default:
-                        Console.WriteLine("Oh It is your business,go back");
+                        Thread.Sleep(500);
+                        Console.WriteLine("Oh It is your business,go back\n");
+                        Thread.Sleep(500);
+                        Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         Console.Clear();
                         EvanRoomA();
@@ -132,7 +139,7 @@ namespace Game_Project
             } while (selection != 4);
         }
 
-        public static void zombies()
+        public static void zombies()//no.1 decision
         {
             Console.Clear();
             Console.WriteLine("So you like crowds");
@@ -163,11 +170,14 @@ namespace Game_Project
                         zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
 
                         Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                        Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.");
+                        Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.\n\n");
                         Console.WriteLine();
                         Thread.Sleep(500);
+                        Console.WriteLine("press enter to continue....");
+                        Thread.Sleep(500);
                         temp = Console.ReadLine();
-                    }
+                        
+                }
                         if (temp == "bomb" && bombA == 0)
                         {                      
                         Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
@@ -180,28 +190,30 @@ namespace Game_Project
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
-                    Console.WriteLine("The Zombies ate your brain....");
+                    Console.WriteLine("The Zombies ate your brain....\n\n\n");
                     Thread.Sleep(1000);
                 if (bombA == 1 && temp != "bomb")
                 {
-                    Console.WriteLine("You seem to have forgotten to use your weapon...");
+                    Console.WriteLine("You seem to have forgotten to use your weapon...\n");
                 }
+                    Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
+
                     Console.Clear();
                     EvanMenu1();
-
-                    Console.ReadLine();
 
                 }
                 else
                 {
                     if (temp != "bomb")
                     {
-                        Console.WriteLine("You survived....");
-                        Console.ReadLine();
-                        Console.WriteLine("It seems that they have gone...");
-                        Console.ReadLine();
-                        Console.WriteLine("You have to go back.");
+                        Console.WriteLine("You survived....\n");
+                        Thread.Sleep(800);
+                        Console.WriteLine("It seems that they have gone...\n");
+                        Thread.Sleep(800);
+                        Console.WriteLine("You have to go back.\n");
+                        Thread.Sleep(800);
+                        Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                     }
                 }
@@ -210,7 +222,7 @@ namespace Game_Project
                 if (temp == "bomb" && bombA >= 1)
                 {
 
-                    Console.WriteLine("You dropped a bomb on a zombie");
+                    Console.WriteLine("You dropped a bomb on a zombie\n\n");
                     bombA = 0;
                     Console.Beep((int)523.2, 300);
                     Console.WriteLine("Beep!");
@@ -253,27 +265,28 @@ namespace Game_Project
 
                                 ");
                     Thread.Sleep(1000);
-                    Console.WriteLine("They died again!!");
+                    Console.WriteLine("They died again!!\n");
                     Thread.Sleep(800);
-                    Console.WriteLine("It seems a Key fragment on the floor ");
+                    Console.WriteLine("It seems a Key fragment on the floor\n ");
                     Thread.Sleep(800);
                     Console.WriteLine($"Would you like to get it?(yes/no)");
                     temp = Console.ReadLine();
                     if (temp == "yes")
                     {
-                        Console.WriteLine($"You got a red Key fragment");
+                        Console.WriteLine($"You got a red Key fragment\n");
+                        Thread.Sleep(800);
+                        Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
                         EvanInventory();
                     }
-                
-                    Console.ReadLine();
+                Console.WriteLine("press enter to continue....");
+                Console.ReadLine();
                 }
-            
-            Console.ReadLine();
+
         }
                               
-        public static void bomb()
+        public static void bomb()//no.2 decision
         {
 
             int count = 1;
@@ -281,7 +294,7 @@ namespace Game_Project
             string temp;
             Random rand = new Random();
             comNum = (char)rand.Next('a','z');
-            //Console.WriteLine(comNum);
+           // Console.WriteLine(comNum); //test
             Console.WriteLine("Smoking is bad for your health, but playing with fire is even more dangerous..");
             Thread.Sleep(1000);
             Console.WriteLine("But if you like...");
@@ -298,23 +311,28 @@ namespace Game_Project
             Thread.Sleep(1000);
             Console.WriteLine("You get FIVE chances to be wrong, and each time you get a hint.");
             Thread.Sleep(1000);
-            Console.WriteLine("To select your wire in letters and cut it.  (Range :a-z)");
+            Console.WriteLine("To select your wire in letters and cut it.  (Range :a-z)\n");
             do
-            {          
+            {
+                Console.WriteLine("make your decision.");
                 temp = Console.ReadLine();
+                
                 guess = Convert.ToChar(temp);
+                Thread.Sleep(500);
                 Console.WriteLine("Guess time: " + count);
                 
                 Console.WriteLine();
                 if (guess < comNum)
                 {
-                    Console.WriteLine("Too low");
+                    Thread.Sleep(1000);
+                    Console.WriteLine("Too low\n");
                 }
                 else
                 {
                     if (guess > comNum)
                     {
-                        Console.WriteLine("Too high");
+                        Thread.Sleep(1000);
+                        Console.WriteLine("Too high\n");
                     }
                 }
                 if (count >= 5)
@@ -364,26 +382,27 @@ namespace Game_Project
 
                                 ");
                     Thread.Sleep(1000);
-                    Console.WriteLine("You dead!!");
+                    Console.WriteLine("You dead!!\n");
+                    Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
                     EvansRoom1();
                 }
                 count++;
             } while (guess != comNum || count >5); 
             Console.WriteLine();
-            Console.WriteLine($"You paused the bomb and got red Key fragment");
+            Console.WriteLine($"You paused the bomb and got red Key fragment\n");
             KeyFragment++;
-            Console.WriteLine($"Would you like to get the bomb?(yes/no)");
+            Console.WriteLine($"Would you like to get the bomb?(yes/no)\n");
             temp =  Console.ReadLine();
             if (temp == "yes")
             {
-                Console.WriteLine($"You got the bomb");
+                Console.WriteLine($"You got the bomb\n");
                 bombA++;
             }
-
+            Console.WriteLine("press enter to continue....");
             Console.ReadLine();
             EvanInventory();
-            Console.ReadLine();
+
             if (KeyFragment == 2)
             {
                 KeyFragment = 0;
@@ -394,29 +413,38 @@ namespace Game_Project
             EvanMenu1();
         }
         
-            static void redKey()
-            {
+            static void redKey()//no.3 decision
+        {
                 if (KeyFragment == 2)
                 {
                     Console.Clear();
-                    Console.WriteLine($"You have got two red Key fragment");
+                    Console.WriteLine($"You have got two red Key fragment\n");
                     Thread.Sleep(500);
-                    Console.WriteLine("The two pieces combined to form a red key....");
+                    Console.WriteLine("The two pieces combined to form a red key....\n");
                     Thread.Sleep(500);
-                    Console.WriteLine("Do you want to put them together(yes/no)");
+                    Console.WriteLine("Do you want to put them together(yes/no)\n");
                     string temp = Console.ReadLine();
                     if (temp == "yes")
                     {
 
-                        Console.WriteLine("Congratuations!");
+                        Console.WriteLine("Congratuations!\n");
                         Thread.Sleep(500);
-                        Console.WriteLine("You got a red key");
+                        Console.WriteLine("You got a red key\n\n");
                         redkey++;
                         KeyFragment = 0;
+                        Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         Console.Clear();
                         Main();
                     }
+                }
+                else
+                {
+                    Thread.Sleep(500);
+                    Console.WriteLine("You were all drowned..\n\n");
+                    Thread.Sleep(500);
+                    Console.WriteLine("press enter to continue....");
+                    Console.ReadLine();
                 }
 
 
