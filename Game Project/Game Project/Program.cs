@@ -80,7 +80,7 @@ namespace Game_Project
             Console.WriteLine("There is a computer scream turns on. It seems that there a question need to be answer...\n");
             Thread.Sleep(500);          
             Console.WriteLine("*****************************************************************************************************************\n");
-            Console.WriteLine(" Question: If your mother and your girlfriend(boyfriend) fall into a pond and nobody can siwm including yourself  \n");
+            Console.WriteLine(" Question: If your mother and your girlfriend(boyfriend) fall into a pond and nobody can swim including yourself  \n");
             Console.WriteLine("*****************************************************************************************************************");
             Thread.Sleep(500);
             Console.WriteLine("How would you like to do?");
@@ -418,7 +418,7 @@ namespace Game_Project
             EvanMenu1();
         }
         
-            static void redKey()//no.3 decision
+        static void redKey()//no.3 decision
         {
                 if (KeyFragment == 2)
                 {
