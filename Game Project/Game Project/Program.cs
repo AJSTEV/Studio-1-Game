@@ -9,7 +9,7 @@ namespace Game_Project
     {
         //Inventory
         //Main Objective Keys
-        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, blacklock = 0, victory = 0, bag = 0;
+        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, blacklock = 0, victory = 0, bag = 0, yellowlock = 0;
         public static int KeyFragment = 0, bombA = 0;//Evan needs
         public static void Inventory()
         {
@@ -724,6 +724,11 @@ namespace Game_Project
                     }
                 } while ((choice < 8) && (choice > 0));
             } while (victory != 5);
+
+            Console.Clear();
+            Console.WriteLine("You Escaped the whatever.");
+            Console.WriteLine("Good for you.");
+            Console.ReadLine();
         }
 
         public static void AlexsRoom1()
@@ -735,7 +740,13 @@ namespace Game_Project
                 Console.WriteLine("What do you wish to do?");
                 Console.WriteLine("1.Go back through the door you entered.");
                 Console.WriteLine("2.Look more closly around the room.");
-                Console.WriteLine("3.Pick up the key");
+                if (yellowlock == 0)
+                {
+                    Console.WriteLine("3.Pick up the key");
+                    yellowlock = 1;
+                }
+                Console.WriteLine("4.Return to the main room.");
+                Console.WriteLine("5.Check Inventory");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -755,13 +766,27 @@ namespace Game_Project
                         yellowkey = yellowkey + 1;
                         Main();
                         break;
+                    case 4:
+                        Console.Clear();
+                        Main();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        Inventory();
+                        break;
                     default:
                         Console.Clear();
                         Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
                         Console.WriteLine("What do you wish to do?");
                         Console.WriteLine("1.Go back through the door you entered.");
                         Console.WriteLine("2.Look more closly around the room.");
-                        Console.WriteLine("3.Pick up the key");
+                        if (yellowlock == 0)
+                        {
+                            Console.WriteLine("3.Pick up the key");
+                            yellowlock = 1;
+                        }
+                        Console.WriteLine("4.Return to the main room.");
+                        Console.WriteLine("5.Check Inventory");
                         break;
                 }
             } while (choice != 3);
