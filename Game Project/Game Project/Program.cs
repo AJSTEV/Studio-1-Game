@@ -9,7 +9,8 @@ namespace Game_Project
     {
         //Inventory
         //Main Objective Keys
-        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, blacklock = 0, victory = 0, bag = 0, yellowlock = 0;
+        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, victory = 0, bag = 0, yellow = 0;
+        public static string yellowlock = "Closed", redlock = "Closed", bluelock = "Closed", greenlock ="Closed", blacklock = "Closed";
         public static int KeyFragment = 0, bombA = 0;//Evan needs
         public static void Inventory()
         {
@@ -30,7 +31,7 @@ namespace Game_Project
             }
             if (yellowkey >= 1)
             {
-                Console.WriteLine($"Red Key x{yellowkey}");
+                Console.WriteLine($"Yellow Key x{yellowkey}");
                 bag = 1;
             }
             if (blackkey >= 1)
@@ -591,12 +592,14 @@ namespace Game_Project
                     Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
                     Console.WriteLine("Inthe center of the room there is a small BLACK key.");
                     Console.WriteLine("What do you wish to do?");
+                    Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
+                    Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
                     Console.WriteLine("1.Go through the RED door.");
                     Console.WriteLine("2.Go through the BLUE door.");
                     Console.WriteLine("3.Go through the GREEN door.");
                     Console.WriteLine("4.Go through the YELLOW door.");
                     Console.WriteLine("5.Check Inevntory");
-                    if (blackkey != 1)
+                    if ((blackkey != 1)&&(blacklock == "Closed"))
                     {
                         Console.WriteLine("6.Pick up the BLACK key.");
                     }
@@ -604,7 +607,7 @@ namespace Game_Project
                     {
                         Console.WriteLine("7.Open the YELLOW lock.");
                     }
-                    if ((blackkey == 1) && (blacklock == 0))
+                    if ((blackkey == 1) && (blacklock == "Closed"))
                     {
                         Console.WriteLine("8.Open the BLACK lock.");
                     }
@@ -657,12 +660,13 @@ namespace Game_Project
                             Console.Clear();
                             Console.WriteLine("You use the YELLOW key to open the YELLOW lock.");
                             yellowkey = yellowkey - 1;
+                            yellowlock = "Open";
                             victory = victory + 1;
                             break;
                         case 8:
                             Console.Clear();
                             Console.WriteLine("You use the BLACK key to open the BLACK lock.");
-                            blacklock = blacklock + 1;
+                            blacklock = "Open";
                             blackkey = 0;
                             victory = victory + 1;
                             break;
@@ -670,18 +674,21 @@ namespace Game_Project
                             Console.Clear();
                             Console.WriteLine("You use the RED key to open the RED lock.");
                             redkey = redkey - 1;
+                            redlock = "Open";
                             victory = victory + 1;
                             break;
                         case 10:
                             Console.Clear();
                             Console.WriteLine("You use the GREEN key to open the GREEN lock.");
                             greenkey = greenkey - 1;
+                            greenlock = "Open";
                             victory = victory + 1;
                             break;
                         case 11:
                             Console.Clear();
                             Console.WriteLine("You use the BLUE key to open the BLUE lock.");
                             bluekey = bluekey - 1;
+                            bluelock = "Open";
                             victory = victory + 1;
                             break;
                         default:
@@ -692,12 +699,14 @@ namespace Game_Project
                                 Console.ReadLine();
                             }
                             Console.WriteLine("What do you wish to do?");
+                            Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
+                            Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
                             Console.WriteLine("1.Go through the RED door.");
                             Console.WriteLine("2.Go through the BLUE door.");
                             Console.WriteLine("3.Go through the GREEN door.");
                             Console.WriteLine("4.Go through the YELLOW door.");
                             Console.WriteLine("5.Check Inventory");
-                            if (blackkey != 1)
+                            if ((blackkey != 1)&&(blacklock == "Closed"))
                             {
                                 Console.WriteLine("6.Pick up the BLACK key.");
                             }
@@ -705,7 +714,7 @@ namespace Game_Project
                             {
                                 Console.WriteLine("7.Open the YELLOW lock.");
                             }
-                            if ((blackkey == 1) && (blacklock == 0))
+                            if ((blackkey == 1) && (blacklock == "Closed"))
                             {
                                 Console.WriteLine("8.Open the BLACK lock.");
                             }
@@ -742,10 +751,10 @@ namespace Game_Project
                 Console.WriteLine("What do you wish to do?");
                 Console.WriteLine("1.Go back through the door you entered.");
                 Console.WriteLine("2.Look more closly around the room.");
-                if (yellowlock == 0)
+                if (yellow == 0)
                 {
                     Console.WriteLine("3.Pick up the key");
-                    yellowlock = 1;
+                    yellow = 1;
                 }
                 Console.WriteLine("4.Return to the main room.");
                 Console.WriteLine("5.Check Inventory");
@@ -782,10 +791,10 @@ namespace Game_Project
                         Console.WriteLine("What do you wish to do?");
                         Console.WriteLine("1.Go back through the door you entered.");
                         Console.WriteLine("2.Look more closly around the room.");
-                        if (yellowlock == 0)
+                        if (yellow == 0)
                         {
                             Console.WriteLine("3.Pick up the key");
-                            yellowlock = 1;
+                            yellow = 1;
                         }
                         Console.WriteLine("4.Return to the main room.");
                         Console.WriteLine("5.Check Inventory");
