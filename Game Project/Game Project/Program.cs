@@ -401,14 +401,14 @@ namespace Game_Project
             }
             Console.WriteLine("press enter to continue....");
             Console.ReadLine();
-            EvanInventory();
+            //EvanInventory();
 
-            if (KeyFragment == 2)
-            {
-                KeyFragment = 0;
-                redKey();
+            //if (KeyFragment == 2)
+            //{
+            //    KeyFragment = 0;
+            //    redKey();
 
-            }
+            //}
             Console.Clear();
             EvanMenu1();
         }
