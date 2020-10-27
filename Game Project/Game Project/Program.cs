@@ -130,6 +130,7 @@ namespace Game_Project
                         break;
                     case 5:
                         //EvanInventory();  //check out inventory
+                        Console.Clear();
                         Inventory();
                         break;
 
@@ -281,10 +282,12 @@ namespace Game_Project
                     if (temp == "yes")
                     {
                         Console.WriteLine($"You got a red Key fragment\n");
+                        Console.WriteLine("KeyFragment +1");
                         Thread.Sleep(800);
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
+                        Console.WriteLine("KeyFragment +1");
                     }
                 Console.WriteLine("press enter to continue....");
                 Console.ReadLine();
@@ -398,22 +401,19 @@ namespace Game_Project
             Console.WriteLine();
             Console.WriteLine($"You paused the bomb and got red Key fragment\n");
             KeyFragment++;
+            Console.WriteLine("KeyFragment +1\n");
             Console.WriteLine($"Would you like to get the bomb?(yes/no)\n");
             temp =  Console.ReadLine();
             if (temp == "yes")
             {
                 Console.WriteLine($"You got the bomb\n");
                 bombA++;
+                Console.WriteLine("bomb +1\n");
             }
             Console.WriteLine("press enter to continue....");
             Console.ReadLine();
 
-            //if (KeyFragment == 2)
-            //{
-            //    KeyFragment = 0;
-            //    redKey();
 
-            //}
             Console.Clear();
             EvanMenu1();
         }
@@ -436,6 +436,7 @@ namespace Game_Project
                         Thread.Sleep(500);
                         Console.WriteLine("You got a red key\n\n");
                         redkey++;
+                        Console.WriteLine("Red key +1 ");
                         KeyFragment = 0;
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
