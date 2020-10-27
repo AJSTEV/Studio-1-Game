@@ -663,24 +663,25 @@ namespace Game_Project
                             Console.Clear();
                             Console.WriteLine("You use the BLACK key to open the BLACK lock.");
                             blacklock = blacklock + 1;
+                            blackkey = 0;
                             victory = victory + 1;
                             break;
                         case 9:
                             Console.Clear();
                             Console.WriteLine("You use the RED key to open the RED lock.");
-                            redkey = redkey + 1;
+                            redkey = redkey - 1;
                             victory = victory + 1;
                             break;
                         case 10:
                             Console.Clear();
                             Console.WriteLine("You use the GREEN key to open the GREEN lock.");
-                            greenkey = greenkey + 1;
+                            greenkey = greenkey - 1;
                             victory = victory + 1;
                             break;
                         case 11:
                             Console.Clear();
                             Console.WriteLine("You use the BLUE key to open the BLUE lock.");
-                            bluekey = bluekey + 1;
+                            bluekey = bluekey - 1;
                             victory = victory + 1;
                             break;
                         default:
