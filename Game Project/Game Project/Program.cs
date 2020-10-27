@@ -9,31 +9,50 @@ namespace Game_Project
     {
         //Inventory
         //Main Objective Keys
-        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, blacklock = 0, victory = 0;
+        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, blacklock = 0, victory = 0, bag = 0;
         public static int KeyFragment = 0, bombA = 0;//Evan needs
         public static void Inventory()
         {
             if (redkey >= 1)
             {
                 Console.WriteLine($"Red Key x{redkey}");
+                bag = 1;
             }
             if (bluekey >= 1)
             {
                 Console.WriteLine($"Blue Key x{bluekey}");
+                bag = 1;
             }
             if (greenkey >= 1)
             {
                 Console.WriteLine($"Green Key x{greenkey}");
+                bag = 1;
             }
             if (yellowkey >= 1)
             {
                 Console.WriteLine($"Red Key x{yellowkey}");
+                bag = 1;
             }
             if (blackkey >= 1)
             {
                 Console.WriteLine($"Black Key x{blackkey}");
+                bag = 1;
             }
-            EvanInventory();//Evan needs
+            if (KeyFragment >= 1)
+            {
+                Console.WriteLine($"Key Fragment x{KeyFragment}");
+                bag = 1;
+            }
+            if (bombA >= 1)
+            {
+                Console.WriteLine($"Bomb x{bombA}");
+                bag = 1;
+            }
+            if (bag == 0)
+            {
+                Console.WriteLine("Your inventory is empty");
+            }
+            
             Console.ReadLine();
 
         }
@@ -44,19 +63,7 @@ namespace Game_Project
         //features: 001:if users pass room2 but didn't use bomb in room .There will be a notice
         //features: 002:if users havn't passed room2 but use bomb in room .There will be a jok notice user
         //features: 003: beep sound can be heard
-        public static void EvanInventory()
-        {
-            if (KeyFragment >= 1)
-            {
-                Console.WriteLine($"Key Fragment x{KeyFragment}");
-            }
-            if (bombA >= 1)
-            {
-                Console.WriteLine($"Bomb x{bombA}");
-            }
-
-
-        }
+        
         static void EvansRoom1()
         {
 
@@ -278,7 +285,6 @@ namespace Game_Project
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
-                        EvanInventory();
                     }
                 Console.WriteLine("press enter to continue....");
                 Console.ReadLine();
@@ -401,7 +407,6 @@ namespace Game_Project
             }
             Console.WriteLine("press enter to continue....");
             Console.ReadLine();
-            EvanInventory();
 
             if (KeyFragment == 2)
             {
@@ -602,6 +607,18 @@ namespace Game_Project
                     {
                         Console.WriteLine("8.Open the BLACK lock.");
                     }
+                    if (redkey == 1)
+                    {
+                        Console.WriteLine("9.Open the RED lock.");
+                    }
+                    if (greenkey == 1)
+                    {
+                        Console.WriteLine("10.Open the GREEN lock.");
+                    }
+                    if (bluekey == 1)
+                    {
+                        Console.WriteLine("11.Open the BLUE lock.");
+                    }
 
                     choice = Convert.ToInt32(Console.ReadLine());
                     switch (choice)
@@ -647,6 +664,24 @@ namespace Game_Project
                             blacklock = blacklock + 1;
                             victory = victory + 1;
                             break;
+                        case 9:
+                            Console.Clear();
+                            Console.WriteLine("You use the RED key to open the RED lock.");
+                            redkey = redkey + 1;
+                            victory = victory + 1;
+                            break;
+                        case 10:
+                            Console.Clear();
+                            Console.WriteLine("You use the GREEN key to open the GREEN lock.");
+                            greenkey = greenkey + 1;
+                            victory = victory + 1;
+                            break;
+                        case 11:
+                            Console.Clear();
+                            Console.WriteLine("You use the BLUE key to open the BLUE lock.");
+                            bluekey = bluekey + 1;
+                            victory = victory + 1;
+                            break;
                         default:
                             if ((choice < 5) && (choice > 0))
                             {
@@ -672,7 +707,20 @@ namespace Game_Project
                             {
                                 Console.WriteLine("8.Open the BLACK lock.");
                             }
+                            if (redkey == 1)
+                            {
+                                Console.WriteLine("9.Open the RED lock.");
+                            }
+                            if (greenkey == 1)
+                            {
+                                Console.WriteLine("10.Open the GREEN lock.");
+                            }
+                            if (bluekey == 1)
+                            {
+                                Console.WriteLine("11.Open the BLUE lock.");
+                            }
                             break;
+
                     }
                 } while ((choice < 8) && (choice > 0));
             } while (victory != 5);
