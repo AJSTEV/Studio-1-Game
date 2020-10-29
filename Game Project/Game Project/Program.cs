@@ -148,6 +148,36 @@ namespace Game_Project
             } while (selection != 4);
         }
 
+        public static void VictoryBeep()
+        {
+            Console.Beep(130, 100);
+            Console.Beep(262, 100);
+            Console.Beep(330, 100);
+            Console.Beep(392, 100);
+            Console.Beep(523, 100);
+            Console.Beep(660, 100);
+            Console.Beep(784, 300);
+            Console.Beep(660, 300);
+            Console.Beep(146, 100);
+            Console.Beep(262, 100);
+            Console.Beep(311, 100);
+            Console.Beep(415, 100);
+            Console.Beep(523, 100);
+            Console.Beep(622, 100);
+            Console.Beep(831, 300);
+            Console.Beep(622, 300);
+            Console.Beep(155, 100);
+            Console.Beep(294, 100);
+            Console.Beep(349, 100);
+            Console.Beep(466, 100);
+            Console.Beep(588, 100);
+            Console.Beep(699, 100);
+            Console.Beep(933, 300);
+            Console.Beep(933, 100);
+            Console.Beep(933, 100);
+            Console.Beep(933, 100);
+            Console.Beep(1047, 400);
+        }
         public static void zombies()//no.1 decision
         {
             Console.Clear();
@@ -353,6 +383,7 @@ namespace Game_Project
                     Console.WriteLine("Oh! My god!! That is a bomb!!!");
                     Console.Beep((int)523.2, 300);
                     Console.WriteLine("Beep!");
+                    Console.Beep();
                     Console.WriteLine("Beep!!");
                     Console.Beep();
                     Console.WriteLine("Beep!!!");
@@ -435,10 +466,12 @@ namespace Game_Project
 
                         Console.WriteLine("Congratuations!\n");
                         Thread.Sleep(500);
+                        VictoryBeep();
                         Console.WriteLine("You got a red key\n\n");
                         redkey++;
                         Console.WriteLine("Red key +1 ");
                         KeyFragment = 0;
+                        
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         Console.Clear();
