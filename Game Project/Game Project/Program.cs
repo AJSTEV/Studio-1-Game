@@ -502,27 +502,82 @@ namespace Game_Project
         public static void OliversRoom1()
         {
             int choice;
-            Console.WriteLine("1. Go to previous room \n 2. Pick up blue key");
+            Console.WriteLine("1. Return to main room");
+            Console.WriteLine("2. [empty]");
+            Console.WriteLine("3. Key");
+            Console.WriteLine("4. [empty]");
             choice = Convert.ToInt32(Console.ReadLine());
-            do
-            {
-                switch (choice)
-                {
-                    case 1:
-                        //go to previous room
-                        break;
-                    case 2:
-                        //pick up blue key
-                        break;
-                    case 3:
-                        break;
-                }
+            Console.Clear();
 
-            } while (choice != 0);
-        Console.ReadLine();
+            switch (choice)
+            {
+                case 1:
+                    //return to main room                                                                  
+                    Main();
+                    break;
+                case 2:
+                    //                                                                                     
+                    break;
+                case 3:
+                    //pick up blue key                                                                     
+                    string keydecision;
+                    Console.WriteLine("You notice a key--");
+                    Console.WriteLine("Attempt to grab the key (yes/no)?");
+                    keydecision = Console.ReadLine().ToLower();
+                    if ((keydecision == "yes") || (keydecision == "y"))
+                    {
+                        blue_lootkey();
+                    }
+                    break;
+                case 4:
+                    //encounter                                                                            
+                    blue_encounter();
+                    break;
+                case 5:
+                    //death                                                                                
+                    break;
+            }
+            Console.ReadLine();
         }
-     
-    
+
+        public static void blue_lootkey()
+        {
+            //attempt to loot key                                                                          
+            Random rand = new Random();
+            int lootattempt = rand.Next(1, 6);
+            Console.WriteLine("You attempt to grab the key");
+            Console.Clear();
+            if (lootattempt <= 4)
+            {
+                //success 
+                //--format for better presentation
+                Console.WriteLine("   ,o.          8 8     ");
+                Console.WriteLine("  d   bzzzzzzzza8o8b    ");
+                Console.WriteLine("   `o'                  ");
+                Console.WriteLine(" ");
+                Console.WriteLine("(1)Blue Key added to inventory");
+                bluekey++;
+            }
+            else
+            {
+                //fail                                                                                     
+                Console.Write("You fail");
+            }
+            Console.ReadLine();
+        }
+
+        public static void blue_encounter()
+        {
+
+        }
+
+        public static void blue_puzzle()
+        {
+
+        }
+
+
+
 
 
 
