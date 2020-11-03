@@ -703,8 +703,7 @@ namespace Game_Project
             int choice;
             do
             {
-                do
-                {
+                
                     Console.WriteLine("You find yourself in a big room.");
                     Console.WriteLine("In the room there is a giant door with four locks on it.");
                     Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
@@ -723,23 +722,23 @@ namespace Game_Project
                     {
                         Console.WriteLine("6.Pick up the BLACK key.");
                     }
-                    if (yellowkey == 1)
+                    if (yellowkey >= 1)
                     {
                         Console.WriteLine("7.Open the YELLOW lock.");
                     }
-                    if ((blackkey == 1) && (blacklock == "Closed"))
+                    if ((blackkey >= 1) && (blacklock == "Closed"))
                     {
                         Console.WriteLine("8.Open the BLACK lock.");
                     }
-                    if (redkey == 1)
+                    if (redkey >= 1)
                     {
                         Console.WriteLine("9.Open the RED lock.");
                     }
-                    if (greenkey == 1)
+                    if (greenkey >= 1)
                     {
                         Console.WriteLine("10.Open the GREEN lock.");
                     }
-                    if (bluekey == 1)
+                    if (bluekey >= 1)
                     {
                         Console.WriteLine("11.Open the BLUE lock.");
                     }
@@ -812,53 +811,19 @@ namespace Game_Project
                             victory = victory + 1;
                             break;
                         default:
-                            if ((choice < 5) && (choice > 0))
-                            {
                                 Console.Clear();
                                 Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
                                 Console.ReadLine();
-                            }
-                            Console.WriteLine("What do you wish to do?");
-                            Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
-                            Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
-                            Console.WriteLine("1.Go through the RED door.");
-                            Console.WriteLine("2.Go through the BLUE door.");
-                            Console.WriteLine("3.Go through the GREEN door.");
-                            Console.WriteLine("4.Go through the YELLOW door.");
-                            Console.WriteLine("5.Check Inventory");
-                            if ((blackkey != 1)&&(blacklock == "Closed"))
-                            {
-                                Console.WriteLine("6.Pick up the BLACK key.");
-                            }
-                            if (yellowkey == 1)
-                            {
-                                Console.WriteLine("7.Open the YELLOW lock.");
-                            }
-                            if ((blackkey == 1) && (blacklock == "Closed"))
-                            {
-                                Console.WriteLine("8.Open the BLACK lock.");
-                            }
-                            if (redkey == 1)
-                            {
-                                Console.WriteLine("9.Open the RED lock.");
-                            }
-                            if (greenkey == 1)
-                            {
-                                Console.WriteLine("10.Open the GREEN lock.");
-                            }
-                            if (bluekey == 1)
-                            {
-                                Console.WriteLine("11.Open the BLUE lock.");
-                            }
                             break;
 
                     }
-                } while ((choice < 8) && (choice > 0));
+                
             } while (victory != 5);
 
             Console.Clear();
             Console.WriteLine("You Escaped the whatever.");
             Console.WriteLine("Good for you.");
+            VictoryBeep();
             Console.ReadLine();
         }
 
