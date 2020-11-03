@@ -67,7 +67,7 @@ namespace Game_Project
         
         static void EvansRoom1()
         {
-
+            
             EvanRoomA();
 
             Console.ReadLine();
@@ -150,6 +150,39 @@ namespace Game_Project
 
         public static void VictoryBeep()
         {
+            Console.WriteLine(@"
+                                               ,.        ,.      ,.
+                                ||        ||      ||  ()
+ ,--. ,-. ,.,-.  ,--.,.,-. ,-.  ||-.,.  ,.|| ,-.  ||-.,. ,-. ,.,-.  ,--.
+//`-'//-\\||/|| //-||||/`'//-\\ ||-'||  ||||//-\\ ||-'||//-\\||/|| ((`-'
+||   || |||| ||||  ||||   || || ||  || /|||||| || ||  |||| |||| ||  ``.
+\\,-.\\-//|| || \\-||||   \\-|| ||  ||//||||\\-|| ||  ||\\-//|| || ,-.))
+ `--' `-' `' `'  `-,|`'    `-^-``'  `-' `'`' `-^-``'  `' `-' `' `' `--'
+                  //           .--------.
+              ,-.//          .: : :  :___`.
+              `--'         .'!!:::::  \\_\ `.
+                      : . /%O!!::::::::\\_\. \
+                     [""]/%%O!!:::::::::  : . \
+                     |  |%%OO!!::::::::::: : . |
+                     |  |%%OO!!:::::::::::::  :|
+                     |  |%%OO!!!::::::::::::: :|
+            :       .'--`.%%OO!!!:::::::::::: :|
+          : .:     /`.__.'\%%OO!!!::::::::::::/
+         :    .   /        \%OO!!!!::::::::::/
+        ,-'``'-. ;          ;%%OO!!!!!!:::::'
+        |`-..-'| |   ,--.   |`%%%OO!!!!!!:'
+        | .   :| |_.','`.`._|  `%%%OO!%%'
+        | . :  | |--'    `--|    `%%%%'
+        |`-..-'| ||   | | | |     /__\`-.
+        \::::::/ ||)|/|)|)|\|           /
+---------`::::'--|._ ~**~ _.|----------( -----------------------
+           )(    |  `-..-'  |           \    ______
+           )(    |          |,--.       ____/ /  /\\ ,-._.-'
+        ,-')('-. |          |\`;/   .-()___  :  |`.!,-'`'/`-._
+       (  '  `  )`-._    _.-'|;,|    `-,    \_\__\`,-'>-.,-._
+        `-....-'     ````    `--'      `-._       (`- `-._`-.                   
+
+");
             Console.Beep(130, 100);
             Console.Beep(262, 100);
             Console.Beep(330, 100);
@@ -177,18 +210,19 @@ namespace Game_Project
             Console.Beep(933, 100);
             Console.Beep(933, 100);
             Console.Beep(1047, 400);
+
         }
         public static void zombies()//no.1 decision
         {
             Console.Clear();
             Console.WriteLine("So you like crowds");
-            Thread.Sleep(800);
+            Thread.Sleep(500);
             Console.WriteLine("Let's have a party..");
-            Thread.Sleep(800);
+            Thread.Sleep(500);
             Console.WriteLine("A gate of a cage opened with a creak");
-            Thread.Sleep(800);
+            Thread.Sleep(500);
             Console.WriteLine("Oh my god!! ZOMBIES IS COMING");
-            Thread.Sleep(800);
+            Thread.Sleep(500);
             Console.WriteLine("RUN!!!");
             Thread.Sleep(800);
             int youDistanceToExit, zombiesDistanceToExit;
@@ -318,7 +352,7 @@ namespace Game_Project
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
-                        Console.WriteLine("KeyFragment +1");
+                        
                     }
                 Console.WriteLine("press enter to continue....");
                 Console.ReadLine();
@@ -336,21 +370,21 @@ namespace Game_Project
             comNum = (char)rand.Next('a','z');
            // Console.WriteLine(comNum); //test
             Console.WriteLine("Smoking is bad for your health, but playing with fire is even more dangerous..");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("But if you like...");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("Let's play bigger");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("There is a bomb...");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("and it's going to explode unless you defuse it.");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("As you can see, there are 26 wires, each with A letter arranged from 'a' to 'z'.");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("Cutting one of the threads will prevent it from exploding.");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("You get FIVE chances to be wrong, and each time you get a hint.");
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
             Console.WriteLine("To select your wire in letters and cut it.  (Range :a-z)\n");
             do
             {
@@ -358,20 +392,20 @@ namespace Game_Project
                 temp = Console.ReadLine();
                 
                 guess = Convert.ToChar(temp);
-                Thread.Sleep(500);
+                
                 Console.WriteLine("Guess time: " + count);
                 
                 Console.WriteLine();
                 if (guess < comNum)
                 {
-                    Thread.Sleep(1000);
+                    
                     Console.WriteLine("Too low\n");
                 }
                 else
                 {
                     if (guess > comNum)
                     {
-                        Thread.Sleep(1000);
+                       
                         Console.WriteLine("Too high\n");
                     }
                 }
@@ -455,9 +489,7 @@ namespace Game_Project
                 if (KeyFragment == 2)
                 {
                     Console.Clear();
-                    Console.WriteLine($"You have got two red Key fragment\n");
-                    Thread.Sleep(500);
-                    Console.WriteLine("The two pieces combined to form a red key....\n");
+                    Console.WriteLine($"You have got two red Key fragments\n");
                     Thread.Sleep(500);
                     Console.WriteLine("Do you want to put them together(yes/no)\n");
                     string temp = Console.ReadLine();
