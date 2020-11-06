@@ -530,25 +530,44 @@ namespace Game_Project
 
 
         //Oliver's Area
-        // commit test
+
+        public static Player currentPlayer = new Player();
+        private static int choiceOliver;
+        
+        public static void DeclareName() //declare characters name
+        {
+            Console.WriteLine("Enter your character's name: ");
+            currentPlayer.name = Console.ReadLine();
+            if (currentPlayer.name == "")
+                Console.WriteLine("Input invalid, try again");
+            else
+                Console.WriteLine("Welcome! " + currentPlayer.name);
+            Console.ReadLine();
+            Main();
+
+        }
         public static void OliversRoom1()
         {
-            int choice;
+            Console.WriteLine(""); //describe room + options
+            OliverMenu();
+        }
+        public static void OliverMenu()
+        {
             Console.WriteLine("1. Return to main room");
-            Console.WriteLine("2. [empty]");
+            Console.WriteLine("2. Declare name");
             Console.WriteLine("3. Key");
             Console.WriteLine("4. [empty]");
-            choice = Convert.ToInt32(Console.ReadLine());
+            choiceOliver = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
 
-            switch (choice)
+            switch (choiceOliver)
             {
                 case 1:
                     //return to main room                                                                  
                     Main();
                     break;
                 case 2:
-                    //                                                                                     
+                    DeclareName();                                                                                    
                     break;
                 case 3:
                     //pick up blue key                                                                     
@@ -558,12 +577,11 @@ namespace Game_Project
                     keydecision = Console.ReadLine().ToLower();
                     if ((keydecision == "yes") || (keydecision == "y"))
                     {
-                        blue_lootkey();
+                        LootBlueKey();
                     }
                     break;
                 case 4:
                     //encounter                                                                            
-                    blue_encounter();
                     break;
                 case 5:
                     //death                                                                                
@@ -572,7 +590,7 @@ namespace Game_Project
             Console.ReadLine();
         }
 
-        public static void blue_lootkey()
+        public static void LootBlueKey()
         {
             //attempt to loot key                                                                          
             Random rand = new Random();
@@ -582,30 +600,13 @@ namespace Game_Project
             if (lootattempt <= 4)
             {
                 //success 
-                //--format for better presentation
-                Console.WriteLine("   ,o.          8 8     ");
-                Console.WriteLine("  d   bzzzzzzzza8o8b    ");
-                Console.WriteLine("   `o'                  ");
-                Console.WriteLine(" ");
                 Console.WriteLine("(1)Blue Key added to inventory");
                 bluekey++;
             }
-            else
-            {
-                //fail                                                                                     
-                Console.Write("You fail");
-            }
+            //fail                                                                                     
+            Console.Write("You fail");
+
             Console.ReadLine();
-        }
-
-        public static void blue_encounter()
-        {
-
-        }
-
-        public static void blue_puzzle()
-        {
-
         }
 
 
@@ -703,7 +704,7 @@ namespace Game_Project
             int choice;
             do
             {
-                
+                    Console.Clear(); //added by oliver
                     Console.WriteLine("You find yourself in a big room.");
                     Console.WriteLine("In the room there is a giant door with four locks on it.");
                     Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
@@ -753,7 +754,7 @@ namespace Game_Project
                             break;
                         case 2:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the BLUE door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("The door is stuck and appears to have not been used in many years");
                             OliversRoom1();
                             break;
                         case 3:
