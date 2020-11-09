@@ -530,90 +530,46 @@ namespace Game_Project
 
 
         //Oliver's Area
-
-        public static Player currentPlayer = new Player();
-        private static int choiceOliver;
-        
-        public static void DeclareName() //declare characters name
-        {
-            Console.WriteLine("Enter your character's name: ");
-            currentPlayer.name = Console.ReadLine();
-            if (currentPlayer.name == "")
-                Console.WriteLine("Input invalid, try again");
-            else
-                Console.WriteLine("Welcome! " + currentPlayer.name);
-            Console.ReadLine();
-            Main();
-
-        }
+        public static string choiceOliver;        
         public static void OliversRoom1()
         {
-            Console.WriteLine(""); //describe room + options
-            OliverMenu();
-        }
-        public static void OliverMenu()
-        {
-            Console.WriteLine("1. Return to main room");
-            Console.WriteLine("2. Declare name");
-            Console.WriteLine("3. Key");
-            Console.WriteLine("4. [empty]");
-            choiceOliver = Convert.ToInt32(Console.ReadLine());
             Console.Clear();
-
+            Console.WriteLine("You push open the door and cautiously enter a dark small room...");
+            Thread.Sleep(700);
+            Console.WriteLine("\nFrom the centre of the room emits a pale blue light");
+            Console.ReadLine();
+            EnterRoom();
+        }
+        public static void EnterRoom()
+        {
+            Console.Clear();
+            Console.WriteLine("1. Return to main room");
+            Console.WriteLine("2. Walk closer and inspect the strange light");
+            choiceOliver = Console.ReadLine();
+            Console.Clear();
             switch (choiceOliver)
             {
-                case 1:
-                    //return to main room                                                                  
+                case "1":
+                    Console.WriteLine("Gripped by a feeling of dread you quickly leave the room");
+                    Console.ReadLine();
                     Main();
                     break;
-                case 2:
-                    DeclareName();                                                                                    
+                case "2":                                                                   
+                    Console.WriteLine("As you walk closer you notice the light is coming from a key atop a pillar");
+                    Thread.Sleep(700);
+                    Console.WriteLine("\nWithout hesistation you grab the key and quickly return to the main room");
+                    Console.ReadLine();
+                    bluekey = 1;
+                    Main();
                     break;
-                case 3:
-                    //pick up blue key                                                                     
-                    string keydecision;
-                    Console.WriteLine("You notice a key--");
-                    Console.WriteLine("Attempt to grab the key (yes/no)?");
-                    keydecision = Console.ReadLine().ToLower();
-                    if ((keydecision == "yes") || (keydecision == "y"))
-                    {
-                        LootBlueKey();
-                    }
-                    break;
-                case 4:
-                    //encounter                                                                            
-                    break;
-                case 5:
-                    //death                                                                                
+                default:
+                    Console.WriteLine("Invalid input");
+                    Console.ReadLine();
+                    EnterRoom();
                     break;
             }
             Console.ReadLine();
         }
-
-        public static void LootBlueKey()
-        {
-            //attempt to loot key                                                                          
-            Random rand = new Random();
-            int lootattempt = rand.Next(1, 6);
-            Console.WriteLine("You attempt to grab the key");
-            Console.Clear();
-            if (lootattempt <= 4)
-            {
-                //success 
-                Console.WriteLine("(1)Blue Key added to inventory");
-                bluekey++;
-            }
-            //fail                                                                                     
-            Console.Write("You fail");
-
-            Console.ReadLine();
-        }
-
-
-
-
-
-
 
 
         // Judah's Area
@@ -754,8 +710,17 @@ namespace Game_Project
                             break;
                         case 2:
                             Console.Clear();
-                            Console.WriteLine("The door is stuck and appears to have not been used in many years");
+                        if (bluekey == 0)
+                        {
+                            Console.WriteLine("The door appears to have not been used in many years");
                             OliversRoom1();
+                        }
+                        else
+                        {
+                            Console.WriteLine("You steel yourself and walk towards where the door was, you find nothing but a stone wall...");
+                        }
+                        Console.ReadLine();
+                            Main();
                             break;
                         case 3:
                             Console.Clear();
