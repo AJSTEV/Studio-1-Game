@@ -235,13 +235,17 @@ namespace Game_Project
             
                 do
                 {
+                int distance = 0;
                     temp = "";
                     while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
                     {
 
-                        youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
-                        zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
-
+                    youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
+                    zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
+                    distance = zombiesDistanceToExit - youDistanceToExit;
+                    if (distance<=0)
+                    {
+                        distance = 0;
                         Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
                         Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.\n\n");
                         Console.WriteLine();
@@ -252,6 +256,7 @@ namespace Game_Project
                     }
                     if (temp == "bomb" && bombA == 0)
                     {                      
+
                         Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
                         Thread.Sleep(2000);
                         Console.WriteLine("and then the zombies chase you even faster....\n");
@@ -804,7 +809,7 @@ namespace Game_Project
                 if (yellow == 0)
                 {
                     Console.WriteLine("3.Pick up the key");
-                    yellow = 1;
+                    // yellow = 1;
                 }
                 Console.WriteLine("4.Return to the main room.");
                 Console.WriteLine("5.Check Inventory");
@@ -825,6 +830,7 @@ namespace Game_Project
                         Console.WriteLine("You pick up the YELLOW key, it feels cold in your hand.");
                         Console.WriteLine("You have everthing you need from this room and so you return to the Main room.");
                         yellowkey = yellowkey + 1;
+                        yellow = 1;
                         Main();
                         break;
                     case 4:
