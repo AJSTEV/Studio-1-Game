@@ -235,20 +235,31 @@ namespace Game_Project
             
                 do
                 {
+                int distance = 0;
                     temp = "";
                     while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
                     {
 
-                        youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
-                        zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
-
+                    youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
+                    zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
+                    distance = zombiesDistanceToExit - youDistanceToExit;
+                    if (distance<=0)
+                    {
+                        distance = 0;
                         Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                        Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.\n\n");
-                        Console.WriteLine();
-                        Thread.Sleep(500);
-                        Console.WriteLine("press enter to continue....");
-                        Thread.Sleep(500);
-                        temp = Console.ReadLine();
+                        Console.WriteLine($"You are down with zombies. Don't struggle\n\n");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
+                        Console.WriteLine($"Zombies are {distance} m from you.\n\n");
+                    }
+
+                    Console.WriteLine();
+                    Thread.Sleep(500);
+                    Console.WriteLine("press enter to continue....");
+                    Thread.Sleep(500);
+                    temp = Console.ReadLine();
                         
                 }
                         if (temp == "bomb" && bombA == 0)
