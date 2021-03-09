@@ -486,7 +486,7 @@ namespace Game_Project
         
         static void redKey()//no.3 decision
         {
-                if (KeyFragment == 2)
+                if (KeyFragment >= 2)
                 {
                     Console.Clear();
                     Console.WriteLine($"You have got two red Key fragments\n");
