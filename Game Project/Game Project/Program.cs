@@ -805,7 +805,7 @@ namespace Game_Project
                 if (yellow == 0)
                 {
                     Console.WriteLine("3.Pick up the key");
-                    yellow = 1;
+                    // yellow = 1;
                 }
                 Console.WriteLine("4.Return to the main room.");
                 Console.WriteLine("5.Check Inventory");
@@ -826,6 +826,7 @@ namespace Game_Project
                         Console.WriteLine("You pick up the YELLOW key, it feels cold in your hand.");
                         Console.WriteLine("You have everthing you need from this room and so you return to the Main room.");
                         yellowkey = yellowkey + 1;
+                        yellow = 1;
                         Main();
                         break;
                     case 4:
