@@ -486,10 +486,10 @@ namespace Game_Project
         
         static void redKey()//no.3 decision
         {
-                if (KeyFragment == 2)
+                if (KeyFragment >= 2)
                 {
                     Console.Clear();
-                    Console.WriteLine($"You have got two red Key fragments\n");
+                    Console.WriteLine($"You have got enough red Key fragments\n");
                     Thread.Sleep(500);
                     Console.WriteLine("Do you want to put them together(yes/no)\n");
                     string temp = Console.ReadLine();
