@@ -248,18 +248,17 @@ namespace Game_Project
                         Thread.Sleep(500);
                         Console.WriteLine("press enter to continue....");
                         Thread.Sleep(500);
-                        temp = Console.ReadLine();
-                        
-                }
-                        if (temp == "bomb" && bombA == 0)
-                        {                      
+                        temp = Console.ReadLine();                       
+                    }
+                    if (temp == "bomb" && bombA == 0)
+                    {                      
                         Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
                         Thread.Sleep(2000);
                         Console.WriteLine("and then the zombies chase you even faster....\n");
                         Thread.Sleep(2000);
-                        }
+                    }
 
-                 } while (temp == "bomb" && bombA == 0 );
+                } while (temp == "bomb" && bombA == 0 );
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
