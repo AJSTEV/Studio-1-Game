@@ -71,7 +71,7 @@ namespace Game_Project
             EvanRoomA();
 
             Console.ReadLine();
-            Console.WriteLine("press enter to continue.");
+            Console.WriteLine("Press enter to continue.");
         }
 
         public static void EvanRoomA()//corn question
