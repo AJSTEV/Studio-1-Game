@@ -230,46 +230,54 @@ namespace Game_Project
             zombiesDistanceToExit = youDistanceToExit + rand.Next(15, 25);
 
             string temp = "";
-
-            do
-            {
-                int distance = 0;
-                temp = "";
-                while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+            
+                do
                 {
+                int distance = 0;
+                    temp = "";
+                    while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+                    {
+
                         youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
                         zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
                         distance = zombiesDistanceToExit - youDistanceToExit;
-                        if (distance <= 0)
+                        if (distance<=0)
                         {
-                            distance = 0;
+                            //distance = 0;
                             Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                            Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.\n\n");
-                            Console.WriteLine();
-                            Thread.Sleep(500);
-                            Console.WriteLine("press enter to continue....");
-                            Thread.Sleep(500);
-                            temp = Console.ReadLine();
+                            Console.WriteLine($"You are down with zombies. Don't struggle\n\n");
                         }
-                        if (temp == "bomb" && bombA == 0)
+                        else
                         {
+                            Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
+                            Console.WriteLine($"Zombies are {distance} m from you.\n\n");
+                        }
 
-                            Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n");
+                        Console.WriteLine();
+                        Thread.Sleep(500);
+                        Console.WriteLine("press enter to continue....");
+                        Thread.Sleep(500);
+                        temp = Console.ReadLine();
+                        
+                    }
+                        if (temp == "bomb" && bombA == 0)
+                        {                      
+                            Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
                             Thread.Sleep(2000);
                             Console.WriteLine("and then the zombies chase you even faster....\n");
                             Thread.Sleep(2000);
                         }
-                    }
+
                 } while (temp == "bomb" && bombA == 0 );
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
                     Console.WriteLine("The Zombies ate your brain....\n\n\n");
                     Thread.Sleep(1000);
-                    if (bombA == 1 && temp != "bomb")
-                    {
-                        Console.WriteLine("You seem to have forgotten to use your weapon...\n");
-                    }
+                if (bombA == 1 && temp != "bomb")
+                {
+                    Console.WriteLine("You seem to have forgotten to use your weapon...\n");
+                }
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
 
@@ -291,8 +299,8 @@ namespace Game_Project
                         Console.ReadLine();
                     }
                 }
-
-
+            
+           
                 if (temp == "bomb" && bombA >= 1)
                 {
 
@@ -318,7 +326,7 @@ namespace Game_Project
                     Console.Beep();
                     Console.WriteLine("Beep!!!!!!!!!!!");
                     Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!!");
+                    Console.WriteLine("Beep!!!!!!!!!!!!");                   
                     Thread.Sleep(800);
                     Console.Clear();
                     Console.WriteLine("BOMB!!!!");
@@ -353,13 +361,15 @@ namespace Game_Project
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
-
+                        
                     }
-                    Console.WriteLine("press enter to continue....");
-                    Console.ReadLine();
+                     Console.WriteLine("press enter to continue....");
+                     Console.ReadLine();
                 }
+
         }
-                              
+
+
         public static void bomb()//no.2 decision
         {
 
