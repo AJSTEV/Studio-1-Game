@@ -827,7 +827,7 @@ namespace Game_Project
                     case 3:
                         Console.Clear();
                         Console.WriteLine("You pick up the YELLOW key, it feels cold in your hand.");
-                        Console.WriteLine("You have everthing you need from this room and so you return to the Main room.");
+                        Console.WriteLine("You have everything you need from this room and so you return to the main room.");
                         yellowkey = yellowkey + 1;
                         yellow = 1;
                         Main();
