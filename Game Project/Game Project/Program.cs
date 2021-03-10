@@ -728,12 +728,12 @@ namespace Game_Project
                             break;
                         case 3:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the GREEN door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("You walk up to the GREEN door and walk through it and now find yourself in a new room.");
                             JudahsRoom1();
                             break;
                         case 4:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the YELLOW door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("You walk up to the YELLOW door and walk through it and now find yourself in a new room.");
                             AlexsRoom1();
                             break;
                         case 5:
