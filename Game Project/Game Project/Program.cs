@@ -842,7 +842,7 @@ namespace Game_Project
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
+                        Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
                         Console.WriteLine("What do you wish to do?");
                         Console.WriteLine("1.Go back through the door you entered.");
                         Console.WriteLine("2.Look more closly around the room.");
