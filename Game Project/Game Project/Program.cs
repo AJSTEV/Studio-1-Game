@@ -670,7 +670,7 @@ namespace Game_Project
                     Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
                     Console.WriteLine("On the other opposite wall there is a RED door and a BLUE door.");
                     Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
-                    Console.WriteLine("Inthe center of the room there is a small BLACK key.");
+                    Console.WriteLine("In the center of the room there is a small BLACK key.");
                     Console.WriteLine("What do you wish to do?");
                     Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
                     Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
