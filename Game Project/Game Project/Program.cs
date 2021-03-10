@@ -678,7 +678,7 @@ namespace Game_Project
                     Console.WriteLine("2.Go through the BLUE door.");
                     Console.WriteLine("3.Go through the GREEN door.");
                     Console.WriteLine("4.Go through the YELLOW door.");
-                    Console.WriteLine("5.Check Inevntory");
+                    Console.WriteLine("5.Check Inevntory.");
                     if ((blackkey != 1)&&(blacklock == "CLOSED"))
                     {
                         Console.WriteLine("6.Pick up the BLACK key.");
