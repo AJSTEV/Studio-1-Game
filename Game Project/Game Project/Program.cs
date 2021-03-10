@@ -709,7 +709,7 @@ namespace Game_Project
                     {
                         case 1:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the RED door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("You walk up to the RED door and walk through it and now find yourself in a new room.");
                             EvansRoom1();
                             break;
                         case 2:
