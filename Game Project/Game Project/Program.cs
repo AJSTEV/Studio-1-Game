@@ -808,10 +808,10 @@ namespace Game_Project
                 Console.WriteLine("2.Look more closely around the room.");
                 if (yellow == 0)
                 {
-                    Console.WriteLine("3.Pick up the key");
+                    Console.WriteLine("3.Pick up the key.");
                 }
                 Console.WriteLine("4.Return to the main room.");
-                Console.WriteLine("5.Check Inventory");
+                Console.WriteLine("5.Check Inventory.");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
