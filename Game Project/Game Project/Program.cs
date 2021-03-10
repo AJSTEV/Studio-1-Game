@@ -605,7 +605,7 @@ namespace Game_Project
                         case 1:
 
                             Console.Clear();
-                            Console.WriteLine("As comfortable as a sit down would be the room's comfort has made you uneasy");
+                            Console.WriteLine("As comfortable as a sit down would be the room's comfort has made you uneasy.");
                             Console.WriteLine("You return to the previous room.");
                             Main();
 
