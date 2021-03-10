@@ -782,7 +782,7 @@ namespace Game_Project
                             break;
                         default:
                                 Console.Clear();
-                                Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
+                                Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
                                 Console.ReadLine();
                             break;
 
