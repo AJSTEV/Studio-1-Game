@@ -150,39 +150,37 @@ namespace Game_Project
 
         public static void VictoryBeep()
         {
-            Console.WriteLine(@"
-                                               ,.        ,.      ,.
-                                ||        ||      ||  ()
- ,--. ,-. ,.,-.  ,--.,.,-. ,-.  ||-.,.  ,.|| ,-.  ||-.,. ,-. ,.,-.  ,--.
-//`-'//-\\||/|| //-||||/`'//-\\ ||-'||  ||||//-\\ ||-'||//-\\||/|| ((`-'
-||   || |||| ||||  ||||   || || ||  || /|||||| || ||  |||| |||| ||  ``.
-\\,-.\\-//|| || \\-||||   \\-|| ||  ||//||||\\-|| ||  ||\\-//|| || ,-.))
- `--' `-' `' `'  `-,|`'    `-^-``'  `-' `'`' `-^-``'  `' `-' `' `' `--'
-                  //           .--------.
-              ,-.//          .: : :  :___`.
-              `--'         .'!!:::::  \\_\ `.
-                      : . /%O!!::::::::\\_\. \
-                     [""]/%%O!!:::::::::  : . \
-                     |  |%%OO!!::::::::::: : . |
-                     |  |%%OO!!:::::::::::::  :|
-                     |  |%%OO!!!::::::::::::: :|
-            :       .'--`.%%OO!!!:::::::::::: :|
-          : .:     /`.__.'\%%OO!!!::::::::::::/
-         :    .   /        \%OO!!!!::::::::::/
-        ,-'``'-. ;          ;%%OO!!!!!!:::::'
-        |`-..-'| |   ,--.   |`%%%OO!!!!!!:'
-        | .   :| |_.','`.`._|  `%%%OO!%%'
-        | . :  | |--'    `--|    `%%%%'
-        |`-..-'| ||   | | | |     /__\`-.
-        \::::::/ ||)|/|)|)|\|           /
----------`::::'--|._ ~**~ _.|----------( -----------------------
-           )(    |  `-..-'  |           \    ______
-           )(    |          |,--.       ____/ /  /\\ ,-._.-'
-        ,-')('-. |          |\`;/   .-()___  :  |`.!,-'`'/`-._
-       (  '  `  )`-._    _.-'|;,|    `-,    \_\__\`,-'>-.,-._
-        `-....-'     ````    `--'      `-._       (`- `-._`-.                   
-
-");
+            Console.WriteLine(@"                                               ,.        ,.      ,.        ");
+            Console.WriteLine(@"                                 ||        ||      ||  ()                  ");
+            Console.WriteLine(@"  ,--. ,-. ,.,-.  ,--.,.,-. ,-.  ||-.,.  ,.|| ,-.  ||-.,. ,-. ,.,-.  ,--.  ");
+            Console.WriteLine(@" //`-'//-\\||/|| //-||||/`'//-\\ ||-'||  ||||//-\\ ||-'||//-\\||/|| ((`-'  ");
+            Console.WriteLine(@" ||   || |||| ||||  ||||   || || ||  || /|||||| || ||  |||| |||| ||  ``.   ");
+            Console.WriteLine(@" \\,-.\\-//|| || \\-||||   \\-|| ||  ||//||||\\-|| ||  ||\\-//|| || ,-.))  ");
+            Console.WriteLine(@"  `--' `-' `' `'  `-,|`'    `-^-``'  `-' `'`' `-^-``'  `' `-' `' `' `--'   ");
+            Console.WriteLine(@"                   //           .--------.                                 ");
+            Console.WriteLine(@"               ,-.//          .: : :  :___`.                               ");
+            Console.WriteLine(@"               `--'         .'!!:::::  \\_\ `.                             ");
+            Console.WriteLine(@"                       : . /%O!!::::::::\\_\. \                            ");
+            Console.WriteLine(@"                      [""]/%%O!!:::::::::  : . \                           ");
+            Console.WriteLine(@"                      |  |%%OO!!::::::::::: : . |                          ");
+            Console.WriteLine(@"                      |  |%%OO!!:::::::::::::  :|                          ");
+            Console.WriteLine(@"                      |  |%%OO!!!::::::::::::: :|                          ");
+            Console.WriteLine(@"             :       .'--`.%%OO!!!:::::::::::: :|                          ");
+            Console.WriteLine(@"           : .:     /`.__.'\%%OO!!!::::::::::::/                           ");
+            Console.WriteLine(@"          :    .   /        \%OO!!!!::::::::::/                            ");
+            Console.WriteLine(@"         ,-'``'-. ;          ;%%OO!!!!!!:::::'                             ");
+            Console.WriteLine(@"         |`-..-'| |   ,--.   |`%%%OO!!!!!!:'                               ");
+            Console.WriteLine(@"         | .   :| |_.','`.`._|  `%%%OO!%%'                                 ");
+            Console.WriteLine(@"         | . :  | |--'    `--|    `%%%%'                                   ");
+            Console.WriteLine(@"         |`-..-'| ||   | | | |     /__\`-.                                 ");
+            Console.WriteLine(@"         \::::::/ ||)|/|)|)|\|           /                                 ");
+            Console.WriteLine(@" ---------`::::'--|._ ~**~ _.|----------( -----------------------          ");
+            Console.WriteLine(@"            )(    |  `-..-'  |           \    ______                       ");
+            Console.WriteLine(@"            )(    |          |,--.       ____/ /  /\\ ,-._.-'              ");
+            Console.WriteLine(@"         ,-')('-. |          |\`;/   .-()___  :  |`.!,-'`'/`-._            ");
+            Console.WriteLine(@"        (  '  `  )`-._    _.-'|;,|    `-,    \_\__\`,-'>-.,-._             ");
+            Console.WriteLine(@"         `-....-'     ````    `--'      `-._       (`- `-._`-.             ");
+            Console.WriteLine(@"                                                                           ");
             Console.Beep(130, 100);
             Console.Beep(262, 100);
             Console.Beep(330, 100);
@@ -232,18 +230,18 @@ namespace Game_Project
             zombiesDistanceToExit = youDistanceToExit + rand.Next(15, 25);
 
             string temp = "";
-            
-                do
-                {
+
+            do
+            {
                 int distance = 0;
-                    temp = "";
-                    while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
-                    {
+                temp = "";
+                while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+                {
 
                     youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
                     zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
                     distance = zombiesDistanceToExit - youDistanceToExit;
-                    if (distance<=0)
+                    if (distance <= 0)
                     {
                         distance = 0;
                         Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
@@ -252,18 +250,18 @@ namespace Game_Project
                         Thread.Sleep(500);
                         Console.WriteLine("press enter to continue....");
                         Thread.Sleep(500);
-                        temp = Console.ReadLine();                       
+                        temp = Console.ReadLine();
                     }
                     if (temp == "bomb" && bombA == 0)
-                    {                      
+                    {
 
-                        Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
+                        Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n");
                         Thread.Sleep(2000);
                         Console.WriteLine("and then the zombies chase you even faster....\n");
                         Thread.Sleep(2000);
                     }
-
-                } while (temp == "bomb" && bombA == 0 );
+                }
+            } while (temp == "bomb" && bombA == 0) ;
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
@@ -294,8 +292,8 @@ namespace Game_Project
                         Console.ReadLine();
                     }
                 }
-            
-           
+
+
                 if (temp == "bomb" && bombA >= 1)
                 {
 
@@ -321,7 +319,7 @@ namespace Game_Project
                     Console.Beep();
                     Console.WriteLine("Beep!!!!!!!!!!!");
                     Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!!");                   
+                    Console.WriteLine("Beep!!!!!!!!!!!!");
                     Thread.Sleep(800);
                     Console.Clear();
                     Console.WriteLine("BOMB!!!!");
@@ -356,13 +354,15 @@ namespace Game_Project
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
-                        
-                    }
-                Console.WriteLine("press enter to continue....");
-                Console.ReadLine();
-                }
 
+                    }
+                    Console.WriteLine("press enter to continue....");
+                    Console.ReadLine();
                 }
+        }
+            
+
+           
                               
         public static void bomb()//no.2 decision
         {
