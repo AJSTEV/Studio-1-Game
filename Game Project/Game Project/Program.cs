@@ -616,7 +616,7 @@ namespace Game_Project
                             Console.Clear();
 
                             Console.WriteLine("You sit down.");
-                            Console.WriteLine("Your hand comes to rest on a small object");
+                            Console.WriteLine("Your hand comes to rest on a small object.");
                             Console.WriteLine("It is a green key, you feel sleepy and take a nap");
                             Console.WriteLine("You awake in the main room");
                             greenkey = greenkey + 1;
