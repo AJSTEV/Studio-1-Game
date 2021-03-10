@@ -791,7 +791,7 @@ namespace Game_Project
             } while (victory != 5);
 
             Console.Clear();
-            Console.WriteLine("You Escaped the whatever.");
+            Console.WriteLine("You escaped the whatever.");
             Console.WriteLine("Good for you.");
             VictoryBeep();
             Console.ReadLine();
