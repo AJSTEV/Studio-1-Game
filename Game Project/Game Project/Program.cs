@@ -636,7 +636,7 @@ namespace Game_Project
 
                             Console.Clear();
 
-                            Console.WriteLine("Invalid input");
+                            Console.WriteLine("Invalid input.");
                             Console.WriteLine("What do you do?");
                             Console.WriteLine("1.Go back through the door you entered.");
                             Console.WriteLine("2.Sit down and relax in comfort.");
