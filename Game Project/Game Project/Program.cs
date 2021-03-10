@@ -590,7 +590,7 @@ namespace Game_Project
 
                     Console.WriteLine("You find yourself in a long corridor, it is warm and comfortable.");
                     Console.WriteLine("Something about this room makes you want to sit down and relax.");
-                    Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string");
+                    Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string.");
                     Console.WriteLine("What do you do?");
                     Console.WriteLine("1.Go back through the door you entered.");
                     Console.WriteLine("2.Sit down and relax in comfort.");
