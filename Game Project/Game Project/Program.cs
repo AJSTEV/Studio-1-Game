@@ -263,7 +263,7 @@ namespace Game_Project
                         Thread.Sleep(2000);
                     }
 
-                } while (temp == "bomb" && bombA == 0 );
+                } while (temp == "bomb" && bombA == 0);
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
