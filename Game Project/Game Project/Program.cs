@@ -137,12 +137,12 @@ namespace Game_Project
 
                     default:
                         Thread.Sleep(500);
-                        Console.WriteLine("Oh It is your business,go back\n");
+                        Console.WriteLine("You exit from red room\n");
                         Thread.Sleep(500);
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         Console.Clear();
-                        EvanRoomA();
+                        Main();
                         break;
                 }
             } while (selection != 4);
