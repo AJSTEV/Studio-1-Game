@@ -594,7 +594,7 @@ namespace Game_Project
                     Console.WriteLine("What do you do?");
                     Console.WriteLine("1. Go back through the door you entered.");
                     Console.WriteLine("2. Sit down and relax in comfort.");
-                    Console.WriteLine("3.Run to grab the key.");
+                    Console.WriteLine("3. Run to grab the key.");
 
                     choice = Convert.ToInt32(Console.ReadLine());
 
