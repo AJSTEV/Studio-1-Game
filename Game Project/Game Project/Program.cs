@@ -626,8 +626,8 @@ namespace Game_Project
                         case 3:
 
                             Console.Clear();
-                            Console.WriteLine("You resist the urge to sit down and sprint for the dangling key");
-                            Console.WriteLine("You grab the key and are immeditely stuck to it");
+                            Console.WriteLine("You resist the urge to sit down and sprint for the dangling key.");
+                            Console.WriteLine("You grab the key and are immeditely stuck to it.");
                             Console.WriteLine("you cannot move.");
 
                             break;
