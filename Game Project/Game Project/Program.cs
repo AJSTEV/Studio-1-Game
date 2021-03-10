@@ -802,7 +802,7 @@ namespace Game_Project
             int choice;
             do
             {
-                Console.WriteLine("The find yourself in a small dark room in the center you see a small yellow key.");
+                Console.WriteLine("You find yourself in a small dark room. In the center you see a small yellow key.");
                 Console.WriteLine("What do you wish to do?");
                 Console.WriteLine("1.Go back through the door you entered.");
                 Console.WriteLine("2.Look more closly around the room.");
