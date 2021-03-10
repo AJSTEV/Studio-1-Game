@@ -269,10 +269,10 @@ namespace Game_Project
                 {
                     Console.WriteLine("The Zombies ate your brain....\n\n\n");
                     Thread.Sleep(1000);
-                if (bombA == 1 && temp != "bomb")
-                {
-                    Console.WriteLine("You seem to have forgotten to use your weapon...\n");
-                }
+                    if (bombA == 1 && temp != "bomb")
+                    {
+                        Console.WriteLine("You seem to have forgotten to use your weapon...\n");
+                    }
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
 
@@ -362,7 +362,7 @@ namespace Game_Project
                 Console.ReadLine();
                 }
 
-        }
+                }
                               
         public static void bomb()//no.2 decision
         {
