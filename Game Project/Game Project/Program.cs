@@ -716,7 +716,7 @@ namespace Game_Project
                             Console.Clear();
                         if (bluekey == 0)
                         {
-                            Console.WriteLine("The door appears to have not been used in many years");
+                            Console.WriteLine("The door appears to have not been used in many years.");
                             OliversRoom1();
                         }
                         else
