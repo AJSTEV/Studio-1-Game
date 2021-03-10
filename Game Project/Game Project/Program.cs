@@ -822,7 +822,7 @@ namespace Game_Project
                         break;
                     case 2:
                         Console.Clear();
-                        Console.WriteLine("You walk arounf the room for a bit but find nothing of interest except the small YELLOW key.");
+                        Console.WriteLine("You walk around the room for a bit but find nothing of interest except the small YELLOW key.");
                         break;
                     case 3:
                         Console.Clear();
