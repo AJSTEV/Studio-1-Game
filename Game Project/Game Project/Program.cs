@@ -845,7 +845,7 @@ namespace Game_Project
                         Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
                         Console.WriteLine("What do you wish to do?");
                         Console.WriteLine("1.Go back through the door you entered.");
-                        Console.WriteLine("2.Look more closly around the room.");
+                        Console.WriteLine("2.Look more closely around the room.");
                         if (yellow == 0)
                         {
                             Console.WriteLine("3.Pick up the key");
