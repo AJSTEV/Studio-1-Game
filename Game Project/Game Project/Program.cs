@@ -811,7 +811,6 @@ namespace Game_Project
             Console.Clear();
             Console.WriteLine("You Escaped the whatever.");
             Console.WriteLine("Good for you.");
-            VictoryBeep();
             Console.ReadLine();
         }
 
