@@ -664,129 +664,147 @@ namespace Game_Project
             int choice;
             do
             {
-                    Console.Clear(); //added by oliver
-                    Console.WriteLine("You find yourself in a big room.");
-                    Console.WriteLine("In the room there is a giant door with four locks on it.");
-                    Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
-                    Console.WriteLine("On the other opposite wall there is a RED door and a BLUE door.");
-                    Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
-                    Console.WriteLine("Inthe center of the room there is a small BLACK key.");
-                    Console.WriteLine("What do you wish to do?");
-                    Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
-                    Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
-                    Console.WriteLine("1.Go through the RED door.");
-                    Console.WriteLine("2.Go through the BLUE door.");
-                    Console.WriteLine("3.Go through the GREEN door.");
-                    Console.WriteLine("4.Go through the YELLOW door.");
-                    Console.WriteLine("5.Check Inevntory");
-                    if ((blackkey != 1)&&(blacklock == "CLOSED"))
-                    {
-                        Console.WriteLine("6.Pick up the BLACK key.");
-                    }
-                    if (yellowkey >= 1)
-                    {
-                        Console.WriteLine("7.Open the YELLOW lock.");
-                    }
-                    if ((blackkey >= 1) && (blacklock == "CLOSED"))
-                    {
-                        Console.WriteLine("8.Open the BLACK lock.");
-                    }
-                    if (redkey >= 1)
-                    {
-                        Console.WriteLine("9.Open the RED lock.");
-                    }
-                    if (greenkey >= 1)
-                    {
-                        Console.WriteLine("10.Open the GREEN lock.");
-                    }
-                    if (bluekey >= 1)
-                    {
-                        Console.WriteLine("11.Open the BLUE lock.");
-                    }
+                Console.Clear(); //added by oliver
+                Console.WriteLine("You find yourself in a big room.");
+                Console.WriteLine("In the room there is a giant door with four locks on it.");
+                Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
+                Console.WriteLine("On the other opposite wall there is a RED door and a BLUE door.");
+                Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
+                Console.WriteLine("Inthe center of the room there is a small BLACK key.");
+                Console.WriteLine("");
+                Console.WriteLine("*****************************************************************************************************************");
+                Console.WriteLine("");
+                Console.WriteLine("What do you wish to do?");
+                Console.WriteLine("");
+                Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
+                Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
+                Console.WriteLine("");
+                Console.WriteLine("*****************************************************************************************************************");
+                Console.WriteLine("");
+                Console.WriteLine("     1      Go through the RED door.");
+                Console.WriteLine("");
+                Console.WriteLine("     2      Go through the BLUE door.");
+                Console.WriteLine("");
+                Console.WriteLine("     3      Go through the GREEN door.");
+                Console.WriteLine("");
+                Console.WriteLine("     4      Go through the YELLOW door.");
+                Console.WriteLine("");
+                Console.WriteLine("     5      Check Inevntory");
+                Console.WriteLine("");
+                if ((blackkey != 1)&&(blacklock == "CLOSED"))
+                {
+                    Console.WriteLine("     6      Pick up the BLACK key.");
+                    Console.WriteLine("");
+                }
+                if (yellowkey >= 1)
+                {
+                    Console.WriteLine("     7      Open the YELLOW lock.");
+                    Console.WriteLine("");
+                }
+                if ((blackkey >= 1) && (blacklock == "CLOSED"))
+                {
+                    Console.WriteLine("     8      Open the BLACK lock.");
+                    Console.WriteLine("");
+                }
+                if (redkey >= 1)
+                {
+                    Console.WriteLine("     9      Open the RED lock.");
+                    Console.WriteLine("");
+                }
+                if (greenkey >= 1)
+                {
+                    Console.WriteLine("     10     Open the GREEN lock.");
+                    Console.WriteLine("");
+                }
+                if (bluekey >= 1)
+                {
+                    Console.WriteLine("     11     Open the BLUE lock.");
+                    Console.WriteLine("");
+                }
 
-                    choice = Convert.ToInt32(Console.ReadLine());
-                    switch (choice)
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("You walk up to the RED door and walk through it and now find your self in a new room.");
+                        EvansRoom1();
+                        break;
+                    case 2:
+                        Console.Clear();
+                    if (bluekey == 0)
                     {
-                        case 1:
-                            Console.Clear();
-                            Console.WriteLine("You walk up to the RED door and walk through it and now find your self in a new room.");
-                            EvansRoom1();
-                            break;
-                        case 2:
-                            Console.Clear();
-                        if (bluekey == 0)
-                        {
-                            Console.WriteLine("The door appears to have not been used in many years");
-                            OliversRoom1();
-                        }
-                        else
-                        {
-                            Console.WriteLine("You steel yourself and walk towards where the door was, you find nothing but a stone wall...");
-                        }
-                        Console.ReadLine();
-                            Main();
-                            break;
-                        case 3:
-                            Console.Clear();
-                            Console.WriteLine("You walk up to the GREEN door and walk through it and now find your self in a new room.");
-                            JudahsRoom1();
-                            break;
-                        case 4:
-                            Console.Clear();
-                            Console.WriteLine("You walk up to the YELLOW door and walk through it and now find your self in a new room.");
-                            AlexsRoom1();
-                            break;
-                        case 5:
-                            Console.Clear();
-                            Inventory();
-                            break;
-                        case 6:
-                            Console.Clear();
-                            Console.WriteLine("You pick up the BLACK key, it feels cold in your hand.");
-                            blackkey = blackkey + 1;
-                            break;
-                        case 7:
-                            Console.Clear();
-                            Console.WriteLine("You use the YELLOW key to open the YELLOW lock.");
-                            yellowkey = yellowkey - 1;
-                            yellowlock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        case 8:
-                            Console.Clear();
-                            Console.WriteLine("You use the BLACK key to open the BLACK lock.");
-                            blacklock = "OPEN";
-                            blackkey = 0;
-                            victory = victory + 1;
-                            break;
-                        case 9:
-                            Console.Clear();
-                            Console.WriteLine("You use the RED key to open the RED lock.");
-                            redkey = redkey - 1;
-                            redlock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        case 10:
-                            Console.Clear();
-                            Console.WriteLine("You use the GREEN key to open the GREEN lock.");
-                            greenkey = greenkey - 1;
-                            greenlock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        case 11:
-                            Console.Clear();
-                            Console.WriteLine("You use the BLUE key to open the BLUE lock.");
-                            bluekey = bluekey - 1;
-                            bluelock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        default:
-                                Console.Clear();
-                                Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
-                                Console.ReadLine();
-                            break;
-
+                        Console.WriteLine("The door appears to have not been used in many years");
+                        OliversRoom1();
                     }
+                    else
+                    {
+                        Console.WriteLine("You steel yourself and walk towards where the door was, you find nothing but a stone wall...");
+                    }
+                    Console.ReadLine();
+                        Main();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("You walk up to the GREEN door and walk through it and now find your self in a new room.");
+                        JudahsRoom1();
+                        break;
+                    case 4:
+                        Console.Clear();
+                        Console.WriteLine("You walk up to the YELLOW door and walk through it and now find your self in a new room.");
+                        AlexsRoom1();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        Inventory();
+                        break;
+                    case 6:
+                        Console.Clear();
+                        Console.WriteLine("You pick up the BLACK key, it feels cold in your hand.");
+                        blackkey = blackkey + 1;
+                        break;
+                    case 7:
+                        Console.Clear();
+                        Console.WriteLine("You use the YELLOW key to open the YELLOW lock.");
+                        yellowkey = yellowkey - 1;
+                        yellowlock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    case 8:
+                        Console.Clear();
+                        Console.WriteLine("You use the BLACK key to open the BLACK lock.");
+                        blacklock = "OPEN";
+                        blackkey = 0;
+                        victory = victory + 1;
+                        break;
+                    case 9:
+                        Console.Clear();
+                        Console.WriteLine("You use the RED key to open the RED lock.");
+                        redkey = redkey - 1;
+                        redlock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    case 10:
+                        Console.Clear();
+                        Console.WriteLine("You use the GREEN key to open the GREEN lock.");
+                        greenkey = greenkey - 1;
+                        greenlock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    case 11:
+                        Console.Clear();
+                        Console.WriteLine("You use the BLUE key to open the BLUE lock.");
+                        bluekey = bluekey - 1;
+                        bluelock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    default:
+                            Console.Clear();
+                            Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
+                            Console.ReadLine();
+                        break;
+
+                }
                 
             } while (victory != 5);
 
