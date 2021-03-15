@@ -71,7 +71,7 @@ namespace Game_Project
             EvanRoomA();
 
             Console.ReadLine();
-            Console.WriteLine("press enter to continue.");
+            Console.WriteLine("Press enter to continue.");
         }
 
         public static void EvanRoomA()//corn question
@@ -594,13 +594,13 @@ namespace Game_Project
 
                 {
 
-                    Console.WriteLine("You find yourself in a long corridor, it is warm and comfortable");
-                    Console.WriteLine("something about this room makes you want to sit down and relax");
-                    Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string");
+                    Console.WriteLine("You find yourself in a long corridor, it is warm and comfortable.");
+                    Console.WriteLine("Something about this room makes you want to sit down and relax.");
+                    Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string.");
                     Console.WriteLine("What do you do?");
-                    Console.WriteLine("1.Go back through the door you entered.");
-                    Console.WriteLine("2.Sit down and relax in comfort.");
-                    Console.WriteLine("3.Run to grab the key.");
+                    Console.WriteLine("1. Go back through the door you entered.");
+                    Console.WriteLine("2. Sit down and relax in comfort.");
+                    Console.WriteLine("3. Run to grab the key.");
 
                     choice = Convert.ToInt32(Console.ReadLine());
 
@@ -611,7 +611,7 @@ namespace Game_Project
                         case 1:
 
                             Console.Clear();
-                            Console.WriteLine("As comfortable as a sit down would be the room's comfort has made you uneasy");
+                            Console.WriteLine("As comfortable as a sit down would be the room's comfort has made you uneasy.");
                             Console.WriteLine("You return to the previous room.");
                             Main();
 
@@ -622,9 +622,9 @@ namespace Game_Project
                             Console.Clear();
 
                             Console.WriteLine("You sit down.");
-                            Console.WriteLine("Your hand comes to rest on a small object");
-                            Console.WriteLine("It is a green key, you feel sleepy and take a nap");
-                            Console.WriteLine("You awake in the main room");
+                            Console.WriteLine("Your hand comes to rest on a small object.");
+                            Console.WriteLine("It is a green key, you feel sleepy and take a nap.");
+                            Console.WriteLine("You awake in the main room.");
                             greenkey = greenkey + 1;
                             Main();
                             break;
@@ -632,9 +632,9 @@ namespace Game_Project
                         case 3:
 
                             Console.Clear();
-                            Console.WriteLine("You resist the urge to sit down and sprint for the dangling key");
-                            Console.WriteLine("You grab the key and are immeditely stuck to it");
-                            Console.WriteLine("you cannot move.");
+                            Console.WriteLine("You resist the urge to sit down and sprint for the dangling key.");
+                            Console.WriteLine("You grab the key and are immediately stuck to it.");
+                            Console.WriteLine("You cannot move.");
 
                             break;
 
@@ -642,7 +642,7 @@ namespace Game_Project
 
                             Console.Clear();
 
-                            Console.WriteLine("Invalid input");
+                            Console.WriteLine("Invalid input.");
                             Console.WriteLine("What do you do?");
                             Console.WriteLine("1.Go back through the door you entered.");
                             Console.WriteLine("2.Sit down and relax in comfort.");
@@ -676,7 +676,7 @@ namespace Game_Project
                     Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
                     Console.WriteLine("On the other opposite wall there is a RED door and a BLUE door.");
                     Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
-                    Console.WriteLine("Inthe center of the room there is a small BLACK key.");
+                    Console.WriteLine("In the center of the room there is a small BLACK key.");
                     Console.WriteLine("What do you wish to do?");
                     Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
                     Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
@@ -684,7 +684,7 @@ namespace Game_Project
                     Console.WriteLine("2.Go through the BLUE door.");
                     Console.WriteLine("3.Go through the GREEN door.");
                     Console.WriteLine("4.Go through the YELLOW door.");
-                    Console.WriteLine("5.Check Inevntory");
+                    Console.WriteLine("5.Check Inevntory.");
                     if ((blackkey != 1)&&(blacklock == "CLOSED"))
                     {
                         Console.WriteLine("6.Pick up the BLACK key.");
@@ -715,14 +715,14 @@ namespace Game_Project
                     {
                         case 1:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the RED door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("You walk up to the RED door and walk through it and now find yourself in a new room.");
                             EvansRoom1();
                             break;
                         case 2:
                             Console.Clear();
                         if (bluekey == 0)
                         {
-                            Console.WriteLine("The door appears to have not been used in many years");
+                            Console.WriteLine("The door appears to have not been used in many years.");
                             OliversRoom1();
                         }
                         else
@@ -734,12 +734,12 @@ namespace Game_Project
                             break;
                         case 3:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the GREEN door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("You walk up to the GREEN door and walk through it and now find yourself in a new room.");
                             JudahsRoom1();
                             break;
                         case 4:
                             Console.Clear();
-                            Console.WriteLine("You walk up to the YELLOW door and walk through it and now find your self in a new room.");
+                            Console.WriteLine("You walk up to the YELLOW door and walk through it and now find yourself in a new room.");
                             AlexsRoom1();
                             break;
                         case 5:
@@ -788,7 +788,7 @@ namespace Game_Project
                             break;
                         default:
                                 Console.Clear();
-                                Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
+                                Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
                                 Console.ReadLine();
                             break;
 
@@ -797,7 +797,7 @@ namespace Game_Project
             } while (victory != 5);
 
             Console.Clear();
-            Console.WriteLine("You Escaped the whatever.");
+            Console.WriteLine("You escaped the whatever.");
             Console.WriteLine("Good for you.");
             VictoryBeep();
             Console.ReadLine();
@@ -808,16 +808,16 @@ namespace Game_Project
             int choice;
             do
             {
-                Console.WriteLine("The find yourself in a small dark room in the center you see a small yellow key.");
+                Console.WriteLine("You find yourself in a small dark room. In the center you see a small yellow key.");
                 Console.WriteLine("What do you wish to do?");
                 Console.WriteLine("1.Go back through the door you entered.");
-                Console.WriteLine("2.Look more closly around the room.");
+                Console.WriteLine("2.Look more closely around the room.");
                 if (yellow == 0)
                 {
-                    Console.WriteLine("3.Pick up the key");
+                    Console.WriteLine("3.Pick up the key.");
                 }
                 Console.WriteLine("4.Return to the main room.");
-                Console.WriteLine("5.Check Inventory");
+                Console.WriteLine("5.Check Inventory.");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -828,12 +828,12 @@ namespace Game_Project
                         break;
                     case 2:
                         Console.Clear();
-                        Console.WriteLine("You walk arounf the room for a bit but find nothing of interest except the small YELLOW key.");
+                        Console.WriteLine("You walk around the room for a bit but find nothing of interest except the small YELLOW key.");
                         break;
                     case 3:
                         Console.Clear();
                         Console.WriteLine("You pick up the YELLOW key, it feels cold in your hand.");
-                        Console.WriteLine("You have everthing you need from this room and so you return to the Main room.");
+                        Console.WriteLine("You have everything you need from this room and so you return to the main room.");
                         yellowkey = yellowkey + 1;
                         yellow = 1;
                         Main();
@@ -848,17 +848,17 @@ namespace Game_Project
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
+                        Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
                         Console.WriteLine("What do you wish to do?");
                         Console.WriteLine("1.Go back through the door you entered.");
-                        Console.WriteLine("2.Look more closly around the room.");
+                        Console.WriteLine("2.Look more closely around the room.");
                         if (yellow == 0)
                         {
-                            Console.WriteLine("3.Pick up the key");
+                            Console.WriteLine("3.Pick up the key.");
                             yellow = 1;
                         }
                         Console.WriteLine("4.Return to the main room.");
-                        Console.WriteLine("5.Check Inventory");
+                        Console.WriteLine("5.Check Inventory.");
                         break;
                 }
             } while (choice != 3);
