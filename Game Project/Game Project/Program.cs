@@ -847,7 +847,7 @@ namespace Game_Project
                             Console.WriteLine("3.Pick up the key.");
                             yellow = 1;
                         }
-                        Console.WriteLine("5.Check Inventory.");
+                        Console.WriteLine("4.Check Inventory.");
                         break;
                 }
             } while (choice != 3);
