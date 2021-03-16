@@ -9,7 +9,7 @@ namespace Game_Project
     {
         //Inventory
         //Main Objective Keys
-        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, victory = 0, bag = 0, yellow = 0;
+        public static int redkey = 0, bluekey = 0, greenkey = 0, yellowkey = 0, blackkey = 0, victory = 0, bag = 0, yellow = 0, green = 0;
         public static string yellowlock = "CLOSED", redlock = "CLOSED", bluelock = "CLOSED", greenlock = "CLOSED", blacklock = "CLOSED";
         public static int KeyFragment = 0, bombA = 0;//Evan needs
         public static void Inventory()
@@ -607,7 +607,7 @@ namespace Game_Project
                     Console.WriteLine("*****************************************************************************************************************");
                     Console.WriteLine("     1      Go back through the door you entered.");
                     Console.WriteLine("");
-                    if (greenkey == 0)
+                    if (green == 0)
                     {
                         Console.WriteLine("     2      Sit down and relax in comfort.");
                         Console.WriteLine("");
@@ -639,6 +639,7 @@ namespace Game_Project
                             Console.WriteLine("It is a green key, you feel sleepy and take a nap.");
                             Console.WriteLine("You awake in the main room.");
                             greenkey = 1;
+                            green = 1;
                             Main();
                             break;
 
