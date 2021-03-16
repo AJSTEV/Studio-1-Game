@@ -790,7 +790,7 @@ namespace Game_Project
                     case 6:
                         Console.Clear();
                         Console.WriteLine("You pick up the BLACK key, it feels cold in your hand.");
-                        blackkey = blackkey + 1;
+                        blackkey = 1;
                         break;
                     case 7:
                         Console.Clear();
@@ -885,7 +885,7 @@ namespace Game_Project
                         Console.Clear();
                         Console.WriteLine("You pick up the YELLOW key, it feels cold in your hand.");
                         Console.WriteLine("You have everything you need from this room and so you return to the main room.");
-                        yellowkey = yellowkey + 1;
+                        yellowkey = 1;
                         yellow = 1;
                         Main();
                         break;
@@ -907,7 +907,7 @@ namespace Game_Project
                         {
                             Console.WriteLine("     3      Pick up the key");
                             Console.WriteLine("");
-                            yellow = yellow + 1;
+                            yellow = 1;
                         }
                         Console.WriteLine("     4      Return to the main room.");
                         Console.WriteLine("");
