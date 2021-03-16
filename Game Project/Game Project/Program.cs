@@ -836,10 +836,6 @@ namespace Game_Project
                         Console.Clear();
                         Inventory();
                         break;
-                    case 5:
-                        Console.Clear();
-                        Inventory();
-                        break;
                     default:
                         Console.Clear();
                         Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
