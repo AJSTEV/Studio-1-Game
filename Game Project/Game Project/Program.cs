@@ -811,7 +811,7 @@ namespace Game_Project
                     Console.WriteLine("3.Pick up the key.");
                 }
 
-                Console.WriteLine("5.Check Inventory.");
+                Console.WriteLine("4.Check Inventory.");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -834,7 +834,7 @@ namespace Game_Project
                         break;
                     case 4:
                         Console.Clear();
-                        Main();
+                        Inventory();
                         break;
                     case 5:
                         Console.Clear();
