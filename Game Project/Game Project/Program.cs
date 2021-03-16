@@ -137,12 +137,12 @@ namespace Game_Project
 
                     default:
                         Thread.Sleep(500);
-                        Console.WriteLine("Oh It is your business,go back\n");
+                        Console.WriteLine("You exit from red room....\n");
                         Thread.Sleep(500);
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         Console.Clear();
-                        EvanRoomA();
+                        Main();
                         break;
                 }
             } while (selection != 4);
@@ -150,39 +150,37 @@ namespace Game_Project
 
         public static void VictoryBeep()
         {
-            Console.WriteLine(@"
-                                               ,.        ,.      ,.
-                                ||        ||      ||  ()
- ,--. ,-. ,.,-.  ,--.,.,-. ,-.  ||-.,.  ,.|| ,-.  ||-.,. ,-. ,.,-.  ,--.
-//`-'//-\\||/|| //-||||/`'//-\\ ||-'||  ||||//-\\ ||-'||//-\\||/|| ((`-'
-||   || |||| ||||  ||||   || || ||  || /|||||| || ||  |||| |||| ||  ``.
-\\,-.\\-//|| || \\-||||   \\-|| ||  ||//||||\\-|| ||  ||\\-//|| || ,-.))
- `--' `-' `' `'  `-,|`'    `-^-``'  `-' `'`' `-^-``'  `' `-' `' `' `--'
-                  //           .--------.
-              ,-.//          .: : :  :___`.
-              `--'         .'!!:::::  \\_\ `.
-                      : . /%O!!::::::::\\_\. \
-                     [""]/%%O!!:::::::::  : . \
-                     |  |%%OO!!::::::::::: : . |
-                     |  |%%OO!!:::::::::::::  :|
-                     |  |%%OO!!!::::::::::::: :|
-            :       .'--`.%%OO!!!:::::::::::: :|
-          : .:     /`.__.'\%%OO!!!::::::::::::/
-         :    .   /        \%OO!!!!::::::::::/
-        ,-'``'-. ;          ;%%OO!!!!!!:::::'
-        |`-..-'| |   ,--.   |`%%%OO!!!!!!:'
-        | .   :| |_.','`.`._|  `%%%OO!%%'
-        | . :  | |--'    `--|    `%%%%'
-        |`-..-'| ||   | | | |     /__\`-.
-        \::::::/ ||)|/|)|)|\|           /
----------`::::'--|._ ~**~ _.|----------( -----------------------
-           )(    |  `-..-'  |           \    ______
-           )(    |          |,--.       ____/ /  /\\ ,-._.-'
-        ,-')('-. |          |\`;/   .-()___  :  |`.!,-'`'/`-._
-       (  '  `  )`-._    _.-'|;,|    `-,    \_\__\`,-'>-.,-._
-        `-....-'     ````    `--'      `-._       (`- `-._`-.                   
-
-");
+            Console.WriteLine(@"                                               ,.        ,.      ,.        ");
+            Console.WriteLine(@"                                 ||        ||      ||  ()                  ");
+            Console.WriteLine(@"  ,--. ,-. ,.,-.  ,--.,.,-. ,-.  ||-.,.  ,.|| ,-.  ||-.,. ,-. ,.,-.  ,--.  ");
+            Console.WriteLine(@" //`-'//-\\||/|| //-||||/`'//-\\ ||-'||  ||||//-\\ ||-'||//-\\||/|| ((`-'  ");
+            Console.WriteLine(@" ||   || |||| ||||  ||||   || || ||  || /|||||| || ||  |||| |||| ||  ``.   ");
+            Console.WriteLine(@" \\,-.\\-//|| || \\-||||   \\-|| ||  ||//||||\\-|| ||  ||\\-//|| || ,-.))  ");
+            Console.WriteLine(@"  `--' `-' `' `'  `-,|`'    `-^-``'  `-' `'`' `-^-``'  `' `-' `' `' `--'   ");
+            Console.WriteLine(@"                   //           .--------.                                 ");
+            Console.WriteLine(@"               ,-.//          .: : :  :___`.                               ");
+            Console.WriteLine(@"               `--'         .'!!:::::  \\_\ `.                             ");
+            Console.WriteLine(@"                       : . /%O!!::::::::\\_\. \                            ");
+            Console.WriteLine(@"                      [""]/%%O!!:::::::::  : . \                           ");
+            Console.WriteLine(@"                      |  |%%OO!!::::::::::: : . |                          ");
+            Console.WriteLine(@"                      |  |%%OO!!:::::::::::::  :|                          ");
+            Console.WriteLine(@"                      |  |%%OO!!!::::::::::::: :|                          ");
+            Console.WriteLine(@"             :       .'--`.%%OO!!!:::::::::::: :|                          ");
+            Console.WriteLine(@"           : .:     /`.__.'\%%OO!!!::::::::::::/                           ");
+            Console.WriteLine(@"          :    .   /        \%OO!!!!::::::::::/                            ");
+            Console.WriteLine(@"         ,-'``'-. ;          ;%%OO!!!!!!:::::'                             ");
+            Console.WriteLine(@"         |`-..-'| |   ,--.   |`%%%OO!!!!!!:'                               ");
+            Console.WriteLine(@"         | .   :| |_.','`.`._|  `%%%OO!%%'                                 ");
+            Console.WriteLine(@"         | . :  | |--'    `--|    `%%%%'                                   ");
+            Console.WriteLine(@"         |`-..-'| ||   | | | |     /__\`-.                                 ");
+            Console.WriteLine(@"         \::::::/ ||)|/|)|)|\|           /                                 ");
+            Console.WriteLine(@" ---------`::::'--|._ ~**~ _.|----------( -----------------------          ");
+            Console.WriteLine(@"            )(    |  `-..-'  |           \    ______                       ");
+            Console.WriteLine(@"            )(    |          |,--.       ____/ /  /\\ ,-._.-'              ");
+            Console.WriteLine(@"         ,-')('-. |          |\`;/   .-()___  :  |`.!,-'`'/`-._            ");
+            Console.WriteLine(@"        (  '  `  )`-._    _.-'|;,|    `-,    \_\__\`,-'>-.,-._             ");
+            Console.WriteLine(@"         `-....-'     ````    `--'      `-._       (`- `-._`-.             ");
+            Console.WriteLine(@"                                                                           ");
             Console.Beep(130, 100);
             Console.Beep(262, 100);
             Console.Beep(330, 100);
@@ -240,39 +238,46 @@ namespace Game_Project
                     while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
                     {
 
-                    youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
-                    zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
-                    distance = zombiesDistanceToExit - youDistanceToExit;
-                    if (distance<=0)
-                    {
-                        distance = 0;
-                        Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                        Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.\n\n");
+                        youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
+                        zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
+                        distance = zombiesDistanceToExit - youDistanceToExit;
+                        if (distance<=0)
+                        {
+                            //distance = 0;
+                            Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
+                            Console.WriteLine($"You are down with zombies. Don't struggle\n\n");
+                        }
+                        else
+                        {
+                            Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
+                            Console.WriteLine($"Zombies are {distance} m from you.\n\n");
+                        }
+
                         Console.WriteLine();
                         Thread.Sleep(500);
                         Console.WriteLine("press enter to continue....");
                         Thread.Sleep(500);
-                        temp = Console.ReadLine();                       
+                        temp = Console.ReadLine();
+                        
                     }
-                    if (temp == "bomb" && bombA == 0)
-                    {                      
+                        if (temp == "bomb" && bombA == 0)
+                        {                      
+                            Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
+                            Thread.Sleep(2000);
+                            Console.WriteLine("and then the zombies chase you even faster....\n");
+                            Thread.Sleep(2000);
+                        }
 
-                        Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
-                        Thread.Sleep(2000);
-                        Console.WriteLine("and then the zombies chase you even faster....\n");
-                        Thread.Sleep(2000);
-                    }
-
-                } while (temp == "bomb" && bombA == 0 );
+                } while (temp == "bomb" && bombA == 0);
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
                     Console.WriteLine("The Zombies ate your brain....\n\n\n");
                     Thread.Sleep(1000);
-                    if (bombA == 1 && temp != "bomb")
-                    {
-                        Console.WriteLine("You seem to have forgotten to use your weapon...\n");
-                    }
+                if (bombA == 1 && temp != "bomb")
+                {
+                    Console.WriteLine("You seem to have forgotten to use your weapon...\n");
+                }
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
 
@@ -358,12 +363,13 @@ namespace Game_Project
                         KeyFragment++;
                         
                     }
-                Console.WriteLine("press enter to continue....");
-                Console.ReadLine();
+                     Console.WriteLine("press enter to continue....");
+                     Console.ReadLine();
                 }
 
-                }
-                              
+        }
+
+
         public static void bomb()//no.2 decision
         {
 
@@ -547,8 +553,10 @@ namespace Game_Project
         public static void EnterRoom()
         {
             Console.Clear();
-            Console.WriteLine("1. Return to main room");
-            Console.WriteLine("2. Walk closer and inspect the strange light");
+            Console.WriteLine("     1      Return to main room");
+            Console.WriteLine("");
+            Console.WriteLine("     2      Walk closer and inspect the strange light");
+            Console.WriteLine("");
             choiceOliver = Console.ReadLine();
             Console.Clear();
             switch (choiceOliver)
@@ -588,13 +596,21 @@ namespace Game_Project
 
                 {
 
-                    Console.WriteLine("You find yourself in a long corridor, it is warm and comfortable.");
-                    Console.WriteLine("Something about this room makes you want to sit down and relax.");
-                    Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string.");
+
+                    Console.WriteLine("You find yourself in a long corridor, it is warm and comfortable");
+                    Console.WriteLine("something about this room makes you want to sit down and relax");
+                    Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string");
+                    Console.WriteLine("*****************************************************************************************************************");
+                    Console.WriteLine("");
                     Console.WriteLine("What do you do?");
-                    Console.WriteLine("1. Go back through the door you entered.");
-                    Console.WriteLine("2. Sit down and relax in comfort.");
-                    Console.WriteLine("3. Run to grab the key.");
+                    Console.WriteLine("");
+                    Console.WriteLine("*****************************************************************************************************************");
+                    Console.WriteLine("     1      Go back through the door you entered.");
+                    Console.WriteLine("");
+                    Console.WriteLine("     2      Sit down and relax in comfort.");
+                    Console.WriteLine("");
+                    Console.WriteLine("     3      Run to grab the key.");
+                    Console.WriteLine("");
 
                     choice = Convert.ToInt32(Console.ReadLine());
 
@@ -636,13 +652,21 @@ namespace Game_Project
 
                             Console.Clear();
 
-                            Console.WriteLine("Invalid input.");
-                            Console.WriteLine("What do you do?");
-                            Console.WriteLine("1.Go back through the door you entered.");
-                            Console.WriteLine("2.Sit down and relax in comfort.");
-                            Console.WriteLine("3.Run to grab the key.");
 
-                            break;
+                            Console.WriteLine("Invalid input"); 
+                            Console.WriteLine("*****************************************************************************************************************");
+                            Console.WriteLine("");
+                            Console.WriteLine("What do you do?");
+                            Console.WriteLine("");
+                            Console.WriteLine("*****************************************************************************************************************");
+                            Console.WriteLine("     1      Go back through the door you entered.");
+                            Console.WriteLine("");
+                            Console.WriteLine("     2      Sit down and relax in comfort.");
+                            Console.WriteLine("");
+                            Console.WriteLine("     3      Run to grab the key.");
+                            Console.WriteLine("");
+
+                        break;
 
                     }
 
@@ -664,136 +688,155 @@ namespace Game_Project
             int choice;
             do
             {
-                    Console.Clear(); //added by oliver
-                    Console.WriteLine("You find yourself in a big room.");
-                    Console.WriteLine("In the room there is a giant door with four locks on it.");
-                    Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
-                    Console.WriteLine("On the other opposite wall there is a RED door and a BLUE door.");
-                    Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
-                    Console.WriteLine("In the center of the room there is a small BLACK key.");
-                    Console.WriteLine("What do you wish to do?");
-                    Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
-                    Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
-                    Console.WriteLine("1.Go through the RED door.");
-                    Console.WriteLine("2.Go through the BLUE door.");
-                    Console.WriteLine("3.Go through the GREEN door.");
-                    Console.WriteLine("4.Go through the YELLOW door.");
-                    Console.WriteLine("5.Check Inevntory.");
-                    if ((blackkey != 1)&&(blacklock == "CLOSED"))
-                    {
-                        Console.WriteLine("6.Pick up the BLACK key.");
-                    }
-                    if (yellowkey >= 1)
-                    {
-                        Console.WriteLine("7.Open the YELLOW lock.");
-                    }
-                    if ((blackkey >= 1) && (blacklock == "CLOSED"))
-                    {
-                        Console.WriteLine("8.Open the BLACK lock.");
-                    }
-                    if (redkey >= 1)
-                    {
-                        Console.WriteLine("9.Open the RED lock.");
-                    }
-                    if (greenkey >= 1)
-                    {
-                        Console.WriteLine("10.Open the GREEN lock.");
-                    }
-                    if (bluekey >= 1)
-                    {
-                        Console.WriteLine("11.Open the BLUE lock.");
-                    }
 
-                    choice = Convert.ToInt32(Console.ReadLine());
-                    switch (choice)
-                    {
-                        case 1:
-                            Console.Clear();
-                            Console.WriteLine("You walk up to the RED door and walk through it and now find yourself in a new room.");
-                            EvansRoom1();
-                            break;
-                        case 2:
-                            Console.Clear();
-                        if (bluekey == 0)
-                        {
-                            Console.WriteLine("The door appears to have not been used in many years.");
-                            OliversRoom1();
-                        }
-                        else
-                        {
-                            Console.WriteLine("You steel yourself and walk towards where the door was, you find nothing but a stone wall...");
-                        }
-                        Console.ReadLine();
-                            Main();
-                            break;
-                        case 3:
-                            Console.Clear();
-                            Console.WriteLine("You walk up to the GREEN door and walk through it and now find yourself in a new room.");
-                            JudahsRoom1();
-                            break;
-                        case 4:
-                            Console.Clear();
-                            Console.WriteLine("You walk up to the YELLOW door and walk through it and now find yourself in a new room.");
-                            AlexsRoom1();
-                            break;
-                        case 5:
-                            Console.Clear();
-                            Inventory();
-                            break;
-                        case 6:
-                            Console.Clear();
-                            Console.WriteLine("You pick up the BLACK key, it feels cold in your hand.");
-                            blackkey = blackkey + 1;
-                            break;
-                        case 7:
-                            Console.Clear();
-                            Console.WriteLine("You use the YELLOW key to open the YELLOW lock.");
-                            yellowkey = yellowkey - 1;
-                            yellowlock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        case 8:
-                            Console.Clear();
-                            Console.WriteLine("You use the BLACK key to open the BLACK lock.");
-                            blacklock = "OPEN";
-                            blackkey = 0;
-                            victory = victory + 1;
-                            break;
-                        case 9:
-                            Console.Clear();
-                            Console.WriteLine("You use the RED key to open the RED lock.");
-                            redkey = redkey - 1;
-                            redlock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        case 10:
-                            Console.Clear();
-                            Console.WriteLine("You use the GREEN key to open the GREEN lock.");
-                            greenkey = greenkey - 1;
-                            greenlock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        case 11:
-                            Console.Clear();
-                            Console.WriteLine("You use the BLUE key to open the BLUE lock.");
-                            bluekey = bluekey - 1;
-                            bluelock = "OPEN";
-                            victory = victory + 1;
-                            break;
-                        default:
-                                Console.Clear();
-                                Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
-                                Console.ReadLine();
-                            break;
+                Console.Clear(); //added by oliver
+                Console.WriteLine("You find yourself in a big room.");
+                Console.WriteLine("In the room there is a giant door with four locks on it.");
+                Console.WriteLine("One RED, one BLUE, one GREEN, one BLACK, and one YELLOW lock.");
+                Console.WriteLine("On the other opposite wall there is a RED door and a BLUE door.");
+                Console.WriteLine("On the left wall there is a GREEN door and on the right there is a YELLOW door.");
+                Console.WriteLine("Inthe center of the room there is a small BLACK key.");
+                Console.WriteLine("");
+                Console.WriteLine("*****************************************************************************************************************");
+                Console.WriteLine("");
+                Console.WriteLine("What do you wish to do?");
+                Console.WriteLine("");
+                Console.WriteLine($"The RED lock is {redlock}, the BLUE lock is {bluelock}, the GREEN lock is {greenlock},");
+                Console.WriteLine($"The YELLOW lock is {yellowlock}, and the BLACK lock is {blacklock}");
+                Console.WriteLine("");
+                Console.WriteLine("*****************************************************************************************************************");
+                Console.WriteLine("");
+                Console.WriteLine("     1      Go through the RED door.");
+                Console.WriteLine("");
+                Console.WriteLine("     2      Go through the BLUE door.");
+                Console.WriteLine("");
+                Console.WriteLine("     3      Go through the GREEN door.");
+                Console.WriteLine("");
+                Console.WriteLine("     4      Go through the YELLOW door.");
+                Console.WriteLine("");
+                Console.WriteLine("     5      Check Inevntory");
+                Console.WriteLine("");
+                if ((blackkey != 1)&&(blacklock == "CLOSED"))
+                {
+                    Console.WriteLine("     6      Pick up the BLACK key.");
+                    Console.WriteLine("");
+                }
+                if (yellowkey >= 1)
+                {
+                    Console.WriteLine("     7      Open the YELLOW lock.");
+                    Console.WriteLine("");
+                }
+                if ((blackkey >= 1) && (blacklock == "CLOSED"))
+                {
+                    Console.WriteLine("     8      Open the BLACK lock.");
+                    Console.WriteLine("");
+                }
+                if (redkey >= 1)
+                {
+                    Console.WriteLine("     9      Open the RED lock.");
+                    Console.WriteLine("");
+                }
+                if (greenkey >= 1)
+                {
+                    Console.WriteLine("     10     Open the GREEN lock.");
+                    Console.WriteLine("");
+                }
+                if (bluekey >= 1)
+                {
+                    Console.WriteLine("     11     Open the BLUE lock.");
+                    Console.WriteLine("");
+                }
 
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        Console.Clear();
+                        Console.WriteLine("You walk up to the RED door and walk through it and now find your self in a new room.");
+                        EvansRoom1();
+                        break;
+                    case 2:
+                        Console.Clear();
+                    if (bluekey == 0)
+                    {
+                        Console.WriteLine("The door appears to have not been used in many years");
+                        OliversRoom1();
                     }
+                    else
+                    {
+                        Console.WriteLine("You steel yourself and walk towards where the door was, you find nothing but a stone wall...");
+                    }
+                    Console.ReadLine();
+                        Main();
+                        break;
+                    case 3:
+                        Console.Clear();
+                        Console.WriteLine("You walk up to the GREEN door and walk through it and now find your self in a new room.");
+                        JudahsRoom1();
+                        break;
+                    case 4:
+                        Console.Clear();
+                        Console.WriteLine("You walk up to the YELLOW door and walk through it and now find your self in a new room.");
+                        AlexsRoom1();
+                        break;
+                    case 5:
+                        Console.Clear();
+                        Inventory();
+                        break;
+                    case 6:
+                        Console.Clear();
+                        Console.WriteLine("You pick up the BLACK key, it feels cold in your hand.");
+                        blackkey = blackkey + 1;
+                        break;
+                    case 7:
+                        Console.Clear();
+                        Console.WriteLine("You use the YELLOW key to open the YELLOW lock.");
+                        yellowkey = yellowkey - 1;
+                        yellowlock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    case 8:
+                        Console.Clear();
+                        Console.WriteLine("You use the BLACK key to open the BLACK lock.");
+                        blacklock = "OPEN";
+                        blackkey = 0;
+                        victory = victory + 1;
+                        break;
+                    case 9:
+                        Console.Clear();
+                        Console.WriteLine("You use the RED key to open the RED lock.");
+                        redkey = redkey - 1;
+                        redlock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    case 10:
+                        Console.Clear();
+                        Console.WriteLine("You use the GREEN key to open the GREEN lock.");
+                        greenkey = greenkey - 1;
+                        greenlock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    case 11:
+                        Console.Clear();
+                        Console.WriteLine("You use the BLUE key to open the BLUE lock.");
+                        bluekey = bluekey - 1;
+                        bluelock = "OPEN";
+                        victory = victory + 1;
+                        break;
+                    default:
+                            Console.Clear();
+                            Console.WriteLine("Invalid input, please enter the number corisponding to the choice you wish to pick.");
+                            Console.ReadLine();
+                        break;
+
+
+                }
                 
             } while (victory != 5);
 
             Console.Clear();
             Console.WriteLine("You escaped the whatever.");
             Console.WriteLine("Good for you.");
-            VictoryBeep();
             Console.ReadLine();
         }
 
@@ -802,16 +845,26 @@ namespace Game_Project
             int choice;
             do
             {
-                Console.WriteLine("You find yourself in a small dark room. In the center you see a small yellow key.");
+                Console.WriteLine("The find yourself in a small dark room in the center you see a small yellow key.");
+                Console.WriteLine("*****************************************************************************************************************");
+                Console.WriteLine("");
                 Console.WriteLine("What do you wish to do?");
-                Console.WriteLine("1.Go back through the door you entered.");
-                Console.WriteLine("2.Look more closely around the room.");
+                Console.WriteLine("");
+                Console.WriteLine("*****************************************************************************************************************");
+                Console.WriteLine("");
+                Console.WriteLine("     1      Go back through the door you entered.");
+                Console.WriteLine("");
+                Console.WriteLine("     2      Look more closly around the room.");
+                Console.WriteLine("");
                 if (yellow == 0)
                 {
-                    Console.WriteLine("3.Pick up the key.");
+                    Console.WriteLine("     3      Pick up the key");
+                    Console.WriteLine("");
                 }
-
-                Console.WriteLine("4.Check Inventory.");
+                Console.WriteLine("     4      Return to the main room.");
+                Console.WriteLine("");
+                Console.WriteLine("     5      Check Inventory");
+                Console.WriteLine("");
                 choice = Convert.ToInt32(Console.ReadLine());
                 switch (choice)
                 {
@@ -838,16 +891,21 @@ namespace Game_Project
                         break;
                     default:
                         Console.Clear();
-                        Console.WriteLine("Invalid input, please enter the number corresponding to the choice you wish to pick.");
-                        Console.WriteLine("What do you wish to do?");
-                        Console.WriteLine("1.Go back through the door you entered.");
-                        Console.WriteLine("2.Look more closely around the room.");
+                        Console.WriteLine("     1      Go back through the door you entered.");
+                        Console.WriteLine("");
+                        Console.WriteLine("     2      Look more closly around the room.");
+                        Console.WriteLine("");
                         if (yellow == 0)
                         {
-                            Console.WriteLine("3.Pick up the key.");
-                            yellow = 1;
+                            Console.WriteLine("     3      Pick up the key");
+                            Console.WriteLine("");
+                            yellow = yellow + 1;
                         }
-                        Console.WriteLine("4.Check Inventory.");
+                        Console.WriteLine("     4      Return to the main room.");
+                        Console.WriteLine("");
+                        Console.WriteLine("     5      Check Inventory");
+                        Console.WriteLine("");
+
                         break;
                 }
             } while (choice != 3);
