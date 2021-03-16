@@ -547,8 +547,8 @@ namespace Game_Project
         public static void EnterRoom()
         {
             Console.Clear();
-            Console.WriteLine("1. Return to main room");
-            Console.WriteLine("2. Walk closer and inspect the strange light");
+            Console.WriteLine("     1      Return to main room");
+            Console.WriteLine("     2      Walk closer and inspect the strange light");
             choiceOliver = Console.ReadLine();
             Console.Clear();
             switch (choiceOliver)
