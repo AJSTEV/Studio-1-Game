@@ -64,14 +64,14 @@ namespace Game_Project
         //features: 001:if users pass room2 but didn't use bomb in room .There will be a notice
         //features: 002:if users havn't passed room2 but use bomb in room .There will be a jok notice user
         //features: 003: beep sound can be heard
-        
+
         static void EvansRoom1()
         {
-            
+
             EvanRoomA();
 
             Console.ReadLine();
-            Console.WriteLine("Press enter to continue.");
+            Console.WriteLine("press enter to continue.");
         }
 
         public static void EvanRoomA()//corn question
@@ -79,7 +79,7 @@ namespace Game_Project
             Console.WriteLine("This room is very dark and cold.\n");
             Thread.Sleep(500);
             Console.WriteLine("There is a computer scream turns on. It seems that there a question need to be answer...\n");
-            Thread.Sleep(500);          
+            Thread.Sleep(500);
             Console.WriteLine("*****************************************************************************************************************\n");
             Console.WriteLine(" Question: If your mother and your girlfriend(boyfriend) fall into a pond and nobody can swim including yourself  \n");
             Console.WriteLine("*****************************************************************************************************************");
@@ -119,15 +119,15 @@ namespace Game_Project
                 switch (selection)
                 {
                     case 1:
-                        zombies();//zombies situation
+                        Zombies();//zombies situation
                         break;
 
                     case 2:
-                        bomb();//bomb situation
+                        Bomb();//bomb situation
                         break;
 
                     case 3:
-                        redKey(); // make red key by fragments 
+                        RedKey(); // make red key by fragments 
                         break;
                     case 5:
                         //EvanInventory();  //check out inventory
@@ -210,7 +210,7 @@ namespace Game_Project
             Console.Beep(1047, 400);
 
         }
-        public static void zombies()//no.1 decision
+        public static void Zombies()//no.1 decision
         {
             Console.Clear();
             Console.WriteLine("So you like crowds");
@@ -223,114 +223,127 @@ namespace Game_Project
             Thread.Sleep(500);
             Console.WriteLine("RUN!!!");
             Thread.Sleep(800);
-            int youDistanceToExit, zombiesDistanceToExit;
+            int youDistanceToExit, zombiesDistanceToExit, distance = 0;
             Random rand = new Random();
 
             youDistanceToExit = rand.Next(10, 20);
             zombiesDistanceToExit = youDistanceToExit + rand.Next(15, 25);
 
             string temp = "";
-            
-                do
-                {
-                int distance = 0;
-                    temp = "";
-                    while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+            do
+            {                
+                temp = "";
+                while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+                {   
+                    youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
+                    zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
+                    distance = zombiesDistanceToExit - youDistanceToExit;
+                    if (distance > 0)
                     {
-
-                        youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
-                        zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
-                        distance = zombiesDistanceToExit - youDistanceToExit;
-                        if (distance<=0)
-                        {
-                            //distance = 0;
-                            Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                            Console.WriteLine($"You are down with zombies. Don't struggle\n\n");
-                        }
-                        else
-                        {
-                            Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                            Console.WriteLine($"Zombies are {distance} m from you.\n\n");
-                        }
-
+                        Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
+                        Console.WriteLine($"Zombies are {distance} m from you.\n\n");
                         Console.WriteLine();
                         Thread.Sleep(500);
                         Console.WriteLine("press enter to continue....");
                         Thread.Sleep(500);
                         temp = Console.ReadLine();
-                        
                     }
-                        if (temp == "bomb" && bombA == 0)
-                        {                      
-                            Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
-                            Thread.Sleep(2000);
-                            Console.WriteLine("and then the zombies chase you even faster....\n");
-                            Thread.Sleep(2000);
-                        }
+                    if (temp == "bomb" && bombA == 0)
+                    {
 
-                } while (temp == "bomb" && bombA == 0);
+                        Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n");
+                        Thread.Sleep(2000);
+                        Console.WriteLine("and then the zombies chase you even faster....\n");
+                        Thread.Sleep(2000);
+                    }
+                }
+            } while (temp == "bomb" && bombA == 0);
 
-                if (zombiesDistanceToExit - youDistanceToExit <= 0)
-                {
-                    Console.WriteLine("The Zombies ate your brain....\n\n\n");
-                    Thread.Sleep(1000);
+            if (distance <= 0)
+            {
+                Console.WriteLine("The Zombies ate your brain....\n\n\n");
+                Thread.Sleep(1000);
                 if (bombA == 1 && temp != "bomb")
                 {
                     Console.WriteLine("You seem to have forgotten to use your weapon...\n");
                 }
+                Console.WriteLine("press enter to continue....");
+                Console.ReadLine();
+
+                Console.Clear();
+                EvanMenu1();
+
+            }
+            else
+            {
+                if (temp != "bomb")
+                {
+                    Console.WriteLine("You survived....\n");
+                    Thread.Sleep(800);
+                    Console.WriteLine("It seems that they have gone...\n");
+                    Thread.Sleep(800);
+                    Console.WriteLine("You have to go back.\n");
+                    Thread.Sleep(800);
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
-
-                    Console.Clear();
-                    EvanMenu1();
-
                 }
-                else
-                {
-                    if (temp != "bomb")
-                    {
-                        Console.WriteLine("You survived....\n");
-                        Thread.Sleep(800);
-                        Console.WriteLine("It seems that they have gone...\n");
-                        Thread.Sleep(800);
-                        Console.WriteLine("You have to go back.\n");
-                        Thread.Sleep(800);
-                        Console.WriteLine("press enter to continue....");
-                        Console.ReadLine();
-                    }
-                }
-            
-           
-                if (temp == "bomb" && bombA >= 1)
-                {
+            }
 
-                    Console.WriteLine("You dropped a bomb on a zombie\n\n");
-                    bombA = 0;
-                    Console.Beep((int)523.2, 300);
-                    Console.WriteLine("Beep!");
-                    Console.WriteLine("Beep!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!!");                   
+
+            if (temp == "bomb" && bombA >= 1)
+            {
+
+                Console.WriteLine("You dropped a bomb on a zombie\n\n");
+
+                BombBeep();
+                Console.WriteLine("They died again!!\n");
+                Thread.Sleep(800);
+                Console.WriteLine("It seems a Key fragment on the floor\n ");
+                Thread.Sleep(800);
+                Console.WriteLine($"Would you like to get it?(yes/no)");
+                temp = Console.ReadLine();
+                if (temp == "yes")
+                {
+                    Console.WriteLine($"You got a red Key fragment\n");
+                    Console.WriteLine("KeyFragment +1");
                     Thread.Sleep(800);
-                    Console.Clear();
-                    Console.WriteLine("BOMB!!!!");
-                    Console.WriteLine(@"
+                    Console.WriteLine("press enter to continue....");
+                    Console.ReadLine();
+                    KeyFragment++;
+
+                }
+                Console.WriteLine("press enter to continue....");
+                Console.ReadLine();
+                bombA = 0;
+            }
+        }
+        public static void BombBeep()
+        {
+            Console.Beep((int)523.2, 300);
+            Console.WriteLine("Beep!");
+            Console.WriteLine("Beep!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!!!!!!!");
+            Console.Beep();
+            Console.WriteLine("Beep!!!!!!!!!!!!");
+            Thread.Sleep(800);
+            Console.Clear();
+            Console.WriteLine("BOMB!!!!");
+            Console.WriteLine(@"
                               -^^---....,,--       
                          _--                  --_  
                         <                        >)
@@ -346,39 +359,18 @@ namespace Game_Project
 
 
                                 ");
-                    Thread.Sleep(1000);
-                    Console.WriteLine("They died again!!\n");
-                    Thread.Sleep(800);
-                    Console.WriteLine("It seems a Key fragment on the floor\n ");
-                    Thread.Sleep(800);
-                    Console.WriteLine($"Would you like to get it?(yes/no)");
-                    temp = Console.ReadLine();
-                    if (temp == "yes")
-                    {
-                        Console.WriteLine($"You got a red Key fragment\n");
-                        Console.WriteLine("KeyFragment +1");
-                        Thread.Sleep(800);
-                        Console.WriteLine("press enter to continue....");
-                        Console.ReadLine();
-                        KeyFragment++;
-                        
-                    }
-                     Console.WriteLine("press enter to continue....");
-                     Console.ReadLine();
-                }
-
+            Thread.Sleep(1000);
         }
 
-
-        public static void bomb()//no.2 decision
+        public static void Bomb()//no.2 decision
         {
 
             int count = 1;
             char guess, comNum;
             string temp;
             Random rand = new Random();
-            comNum = (char)rand.Next('a','z');
-           // Console.WriteLine(comNum); //test
+            comNum = (char)rand.Next('a', 'z');
+            // Console.WriteLine(comNum); //test
             Console.WriteLine("Smoking is bad for your health, but playing with fire is even more dangerous..");
             Thread.Sleep(500);
             Console.WriteLine("But if you like...");
@@ -400,86 +392,45 @@ namespace Game_Project
             {
                 Console.WriteLine("make your decision.");
                 temp = Console.ReadLine();
-                
+
                 guess = Convert.ToChar(temp);
-                
+
                 Console.WriteLine("Guess time: " + count);
-                
+
                 Console.WriteLine();
                 if (guess < comNum)
                 {
-                    
+
                     Console.WriteLine("Too low\n");
                 }
                 else
                 {
                     if (guess > comNum)
                     {
-                       
+
                         Console.WriteLine("Too high\n");
                     }
                 }
                 if (count >= 5)
                 {
-                    Console.Clear();                  
+                    Console.Clear();
                     Console.WriteLine("What is that sound ? ");
                     Thread.Sleep(500);
                     Console.WriteLine("Oh! My god!! That is a bomb!!!");
-                    Console.Beep((int)523.2, 300);
-                    Console.WriteLine("Beep!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!");
-                    Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!!");
-                    Thread.Sleep(800);
-                    Console.Clear();
-                    Console.WriteLine("BOMB!!!!");
-                    Console.WriteLine(@"
-                              -^^---....,,--       
-                         _--                  --_  
-                        <                        >)
-                        |                         | 
-                         \._                   _./  
-                            ```--. . , ; .--'''       
-                                  | |   |             
-                               .-=||  | |=-.   
-                               `-=#$%&%$#=-'   
-                                  | ;  :|     
-                         _____.,-#%&$@%#&#~,._____
-
-
-
-                                ");
-                    Thread.Sleep(1000);
+                    BombBeep();
                     Console.WriteLine("You dead!!\n");
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
                     EvansRoom1();
                 }
                 count++;
-            } while (guess != comNum || count >5); 
+            } while (guess != comNum || count > 5);
             Console.WriteLine();
             Console.WriteLine($"You paused the bomb and got red Key fragment\n");
             KeyFragment++;
             Console.WriteLine("KeyFragment +1\n");
             Console.WriteLine($"Would you like to get the bomb?(yes/no)\n");
-            temp =  Console.ReadLine();
+            temp = Console.ReadLine();
             if (temp == "yes")
             {
                 Console.WriteLine($"You got the bomb\n");
@@ -493,44 +444,44 @@ namespace Game_Project
             Console.Clear();
             EvanMenu1();
         }
-        
-        static void redKey()//no.3 decision
-        {
-                if (KeyFragment >= 2)
-                {
-                    Console.Clear();
-                    Console.WriteLine($"You have got enough red Key fragments\n");
-                    Thread.Sleep(500);
-                    Console.WriteLine("Do you want to put them together(yes/no)\n");
-                    string temp = Console.ReadLine();
-                    if (temp == "yes")
-                    {
 
-                        Console.WriteLine("Congratuations!\n");
-                        Thread.Sleep(500);
-                        VictoryBeep();
-                        Console.WriteLine("You got a red key\n\n");
-                        redkey++;
-                        Console.WriteLine("Red key +1 ");
-                        KeyFragment = 0;
-                        
-                        Console.WriteLine("press enter to continue....");
-                        Console.ReadLine();
-                        Console.Clear();
-                        Main();
-                    }
-                }
-                else
+        static void RedKey()//no.3 decision
+        {
+            if (KeyFragment >= 2)
+            {
+                Console.Clear();
+                Console.WriteLine($"You have got enough red Key fragments\n");
+                Thread.Sleep(500);
+                Console.WriteLine("Do you want to put them together(yes/no)\n");
+                string temp = Console.ReadLine();
+                if (temp == "yes")
                 {
+
+                    Console.WriteLine("Congratuations!\n");
                     Thread.Sleep(500);
-                    Console.WriteLine("You were all drowned..\n\n");
-                    Thread.Sleep(500);
+                    VictoryBeep();
+                    Console.WriteLine("You got a red key\n\n");
+                    redkey++;
+                    Console.WriteLine("Red key +1 ");
+                    KeyFragment = 0;
+
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
+                    Console.Clear();
+                    Main();
                 }
-
-
             }
+            else
+            {
+                Thread.Sleep(500);
+                Console.WriteLine("You were all drowned..\n\n");
+                Thread.Sleep(500);
+                Console.WriteLine("press enter to continue....");
+                Console.ReadLine();
+            }
+
+
+        }
 
 
 
