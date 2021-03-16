@@ -607,8 +607,11 @@ namespace Game_Project
                     Console.WriteLine("*****************************************************************************************************************");
                     Console.WriteLine("     1      Go back through the door you entered.");
                     Console.WriteLine("");
-                    Console.WriteLine("     2      Sit down and relax in comfort.");
-                    Console.WriteLine("");
+                    if (greenkey == 0)
+                    {
+                        Console.WriteLine("     2      Sit down and relax in comfort.");
+                        Console.WriteLine("");
+                    }
                     Console.WriteLine("     3      Run to grab the key.");
                     Console.WriteLine("");
 
@@ -635,7 +638,7 @@ namespace Game_Project
                             Console.WriteLine("Your hand comes to rest on a small object.");
                             Console.WriteLine("It is a green key, you feel sleepy and take a nap.");
                             Console.WriteLine("You awake in the main room.");
-                            greenkey = greenkey + 1;
+                            greenkey = 1;
                             Main();
                             break;
 
