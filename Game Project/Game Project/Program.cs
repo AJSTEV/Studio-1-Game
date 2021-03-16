@@ -71,7 +71,7 @@ namespace Game_Project
             EvanRoomA();
 
             Console.ReadLine();
-            Console.WriteLine("press enter to continue.");
+            Console.WriteLine("Press enter to continue.");
         }
 
         public static void EvanRoomA()//corn question
@@ -230,46 +230,54 @@ namespace Game_Project
             zombiesDistanceToExit = youDistanceToExit + rand.Next(15, 25);
 
             string temp = "";
-
-            do
-            {
-                int distance = 0;
-                temp = "";
-                while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+            
+                do
                 {
+                int distance = 0;
+                    temp = "";
+                    while ((youDistanceToExit < zombiesDistanceToExit) && (youDistanceToExit > 0) && (temp != "bomb"))
+                    {
+
                         youDistanceToExit = youDistanceToExit - rand.Next(1, 2);
                         zombiesDistanceToExit = zombiesDistanceToExit - rand.Next(2, 6);
                         distance = zombiesDistanceToExit - youDistanceToExit;
-                        if (distance <= 0)
+                        if (distance<=0)
                         {
-                            distance = 0;
+                            //distance = 0;
                             Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
-                            Console.WriteLine($"Zombies are {zombiesDistanceToExit - youDistanceToExit} m from you.\n\n");
-                            Console.WriteLine();
-                            Thread.Sleep(500);
-                            Console.WriteLine("press enter to continue....");
-                            Thread.Sleep(500);
-                            temp = Console.ReadLine();
+                            Console.WriteLine($"You are down with zombies. Don't struggle\n\n");
                         }
-                        if (temp == "bomb" && bombA == 0)
+                        else
                         {
+                            Console.WriteLine($"You are {youDistanceToExit} m from Exit.");
+                            Console.WriteLine($"Zombies are {distance} m from you.\n\n");
+                        }
 
-                            Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n");
+                        Console.WriteLine();
+                        Thread.Sleep(500);
+                        Console.WriteLine("press enter to continue....");
+                        Thread.Sleep(500);
+                        temp = Console.ReadLine();
+                        
+                    }
+                        if (temp == "bomb" && bombA == 0)
+                        {                      
+                            Console.WriteLine("After you yell \"bomb\" the world goes quiet for a second......\n") ;
                             Thread.Sleep(2000);
                             Console.WriteLine("and then the zombies chase you even faster....\n");
                             Thread.Sleep(2000);
                         }
-                    }
-                } while (temp == "bomb" && bombA == 0 );
+
+                } while (temp == "bomb" && bombA == 0);
 
                 if (zombiesDistanceToExit - youDistanceToExit <= 0)
                 {
                     Console.WriteLine("The Zombies ate your brain....\n\n\n");
                     Thread.Sleep(1000);
-                    if (bombA == 1 && temp != "bomb")
-                    {
-                        Console.WriteLine("You seem to have forgotten to use your weapon...\n");
-                    }
+                if (bombA == 1 && temp != "bomb")
+                {
+                    Console.WriteLine("You seem to have forgotten to use your weapon...\n");
+                }
                     Console.WriteLine("press enter to continue....");
                     Console.ReadLine();
 
@@ -291,8 +299,8 @@ namespace Game_Project
                         Console.ReadLine();
                     }
                 }
-
-
+            
+           
                 if (temp == "bomb" && bombA >= 1)
                 {
 
@@ -318,7 +326,7 @@ namespace Game_Project
                     Console.Beep();
                     Console.WriteLine("Beep!!!!!!!!!!!");
                     Console.Beep();
-                    Console.WriteLine("Beep!!!!!!!!!!!!");
+                    Console.WriteLine("Beep!!!!!!!!!!!!");                   
                     Thread.Sleep(800);
                     Console.Clear();
                     Console.WriteLine("BOMB!!!!");
@@ -353,13 +361,15 @@ namespace Game_Project
                         Console.WriteLine("press enter to continue....");
                         Console.ReadLine();
                         KeyFragment++;
-
+                        
                     }
-                    Console.WriteLine("press enter to continue....");
-                    Console.ReadLine();
+                     Console.WriteLine("press enter to continue....");
+                     Console.ReadLine();
                 }
+
         }
-                              
+
+
         public static void bomb()//no.2 decision
         {
 
@@ -586,6 +596,7 @@ namespace Game_Project
 
                 {
 
+
                     Console.WriteLine("You find yourself in a long corridor, it is warm and comfortable");
                     Console.WriteLine("something about this room makes you want to sit down and relax");
                     Console.WriteLine("At the end of this comfortable corridoor is a small green key hanging from what looks like a string");
@@ -610,7 +621,7 @@ namespace Game_Project
                         case 1:
 
                             Console.Clear();
-                            Console.WriteLine("As comfortable as a sit down would be the room's comfort has made you uneasy");
+                            Console.WriteLine("As comfortable as a sit down would be the room's comfort has made you uneasy.");
                             Console.WriteLine("You return to the previous room.");
                             Main();
 
@@ -621,9 +632,9 @@ namespace Game_Project
                             Console.Clear();
 
                             Console.WriteLine("You sit down.");
-                            Console.WriteLine("Your hand comes to rest on a small object");
-                            Console.WriteLine("It is a green key, you feel sleepy and take a nap");
-                            Console.WriteLine("You awake in the main room");
+                            Console.WriteLine("Your hand comes to rest on a small object.");
+                            Console.WriteLine("It is a green key, you feel sleepy and take a nap.");
+                            Console.WriteLine("You awake in the main room.");
                             greenkey = greenkey + 1;
                             Main();
                             break;
@@ -631,15 +642,16 @@ namespace Game_Project
                         case 3:
 
                             Console.Clear();
-                            Console.WriteLine("You resist the urge to sit down and sprint for the dangling key");
-                            Console.WriteLine("You grab the key and are immeditely stuck to it");
-                            Console.WriteLine("you cannot move.");
+                            Console.WriteLine("You resist the urge to sit down and sprint for the dangling key.");
+                            Console.WriteLine("You grab the key and are immediately stuck to it.");
+                            Console.WriteLine("You cannot move.");
 
                             break;
 
                         default:
 
                             Console.Clear();
+
 
                             Console.WriteLine("Invalid input"); 
                             Console.WriteLine("*****************************************************************************************************************");
@@ -676,6 +688,7 @@ namespace Game_Project
             int choice;
             do
             {
+
                 Console.Clear(); //added by oliver
                 Console.WriteLine("You find yourself in a big room.");
                 Console.WriteLine("In the room there is a giant door with four locks on it.");
@@ -816,12 +829,13 @@ namespace Game_Project
                             Console.ReadLine();
                         break;
 
+
                 }
                 
             } while (victory != 5);
 
             Console.Clear();
-            Console.WriteLine("You Escaped the whatever.");
+            Console.WriteLine("You escaped the whatever.");
             Console.WriteLine("Good for you.");
             Console.ReadLine();
         }
@@ -861,12 +875,12 @@ namespace Game_Project
                         break;
                     case 2:
                         Console.Clear();
-                        Console.WriteLine("You walk arounf the room for a bit but find nothing of interest except the small YELLOW key.");
+                        Console.WriteLine("You walk around the room for a bit but find nothing of interest except the small YELLOW key.");
                         break;
                     case 3:
                         Console.Clear();
                         Console.WriteLine("You pick up the YELLOW key, it feels cold in your hand.");
-                        Console.WriteLine("You have everthing you need from this room and so you return to the Main room.");
+                        Console.WriteLine("You have everything you need from this room and so you return to the main room.");
                         yellowkey = yellowkey + 1;
                         yellow = 1;
                         Main();
@@ -895,6 +909,7 @@ namespace Game_Project
                         Console.WriteLine("");
                         Console.WriteLine("     5      Check Inventory");
                         Console.WriteLine("");
+
                         break;
                 }
             } while (choice != 3);
